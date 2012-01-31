@@ -1,0 +1,31 @@
+#include "body.hpp"
+
+namespace cp {
+	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), freeBody(true) {
+	}
+	
+	Body::~Body() {
+		if (freeBody) {
+			cpBodyFree(body);
+		}
+	}
+	
+	Body::Body(cpBody* body) : body(body), freeBody(false) {
+	}
+	
+	Body::operator cpBody*() const {
+		return body;
+	}
+
+	void Body::setPos(Vect p) {
+		cpBodySetPos(body, p);
+	}
+
+	Vect Body::getPos() const {
+		return cpBodyGetPos(body);
+	}
+
+	Vect Body::getVel() const {
+		return cpBodyGetVel(body);
+	}
+}
