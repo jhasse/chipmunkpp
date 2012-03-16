@@ -19,4 +19,16 @@ namespace cp {
 	void Shape::setFriction(Float f) {
 		cpShapeSetFriction(shape, f);
 	}
+	
+	void Shape::setElasticity(Float f) {
+		cpShapeSetElasticity(shape, f);
+	}
+	
+	void Shape::setGroup(Group g) {
+		cpShapeSetGroup(shape, g);
+	}
+	
+	void Shape::setCollisionType(CollisionType t) {
+		cpShapeSetCollisionType(shape, t);
+	}
 }

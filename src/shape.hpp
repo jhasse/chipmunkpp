@@ -1,6 +1,7 @@
 #pragma once
 
 #include "vect.hpp"
+#include "types.hpp"
 
 #include <chipmunk.h>
 
@@ -12,6 +13,9 @@ namespace cp {
 		operator cpShape*() const;
 		bool pointQuery(Vect) const;
 		void setFriction(Float);
+		void setElasticity(Float);
+		void setGroup(Group);
+		void setCollisionType(CollisionType);
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
