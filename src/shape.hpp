@@ -19,6 +19,7 @@ namespace cp {
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
+	protected:
 		cpShape* shape;
 	};
 }

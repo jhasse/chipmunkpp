@@ -28,4 +28,16 @@ namespace cp {
 	Vect Body::getVel() const {
 		return cpBodyGetVel(body);
 	}
+	
+	void Body::setVel(Vect velocity) {
+		cpBodySetVel(body, velocity);
+	}
+	
+	DataPointer Body::getUserData() const {
+		return cpBodyGetUserData(body);
+	}
+	
+	void Body::setUserData(DataPointer p) {
+		cpBodySetUserData(body, p);
+	}
 }
