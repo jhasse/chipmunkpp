@@ -12,9 +12,13 @@ namespace cp {
 		return space;
 	}
 	
-	const Shape& Space::addShape(const Shape& shape) {
+	Shape& Space::addShape(Shape& shape) {
 		cpSpaceAddShape(space, shape);
 		return shape;
+	}
+	
+	void Space::removeShape(Shape& shape) {
+		cpSpaceRemoveShape(space, shape);
 	}
 
 	void Space::setGravity(const Vect& vect) {

@@ -12,7 +12,8 @@ namespace cp {
 		Space();
 		~Space();
 		operator cpSpace*();
-		const Shape& addShape(const Shape&);
+		Shape& addShape(Shape&);
+		void removeShape(Shape&);
 		void setGravity(const Vect&);
 		void addBody(const Body&);
 		void step(Float);
