@@ -8,4 +8,8 @@ namespace cp {
 	int PolyShape::getNumVerts() const {
 		return cpPolyShapeGetNumVerts(shape);
 	}
+	
+	cp::Vect PolyShape::getVert(int i) {
+		return cpPolyShapeGetVert(shape, i);
+	}
 }
