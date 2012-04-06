@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>chipmunk++-mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>chipmunk++.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>C99DC5441528D18100779081</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9BFC3C9152B62F200692B07</key>
 		<dict>
 			<key>primary</key>
 			<true/>

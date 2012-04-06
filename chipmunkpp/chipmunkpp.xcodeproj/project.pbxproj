@@ -7,6 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9BFC3CD152B62F200692B07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFC3CC152B62F200692B07 /* Cocoa.framework */; };
+		C9BFC3D7152B62F200692B07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9BFC3D5152B62F200692B07 /* InfoPlist.strings */; };
+		C9BFC3E0152B644000692B07 /* chipmunk.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC58C1528D5D200779081 /* chipmunk.c */; };
+		C9BFC3E1152B644000692B07 /* cpConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5931528D5D200779081 /* cpConstraint.c */; };
+		C9BFC3E2152B644000692B07 /* cpDampedRotarySpring.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5951528D5D200779081 /* cpDampedRotarySpring.c */; };
+		C9BFC3E3152B644000692B07 /* cpDampedSpring.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5971528D5D200779081 /* cpDampedSpring.c */; };
+		C9BFC3E4152B644000692B07 /* cpGearJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5991528D5D200779081 /* cpGearJoint.c */; };
+		C9BFC3E5152B644000692B07 /* cpGrooveJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC59B1528D5D200779081 /* cpGrooveJoint.c */; };
+		C9BFC3E6152B644000692B07 /* cpPinJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC59D1528D5D200779081 /* cpPinJoint.c */; };
+		C9BFC3E7152B644000692B07 /* cpPivotJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC59F1528D5D200779081 /* cpPivotJoint.c */; };
+		C9BFC3E8152B644000692B07 /* cpRatchetJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5A11528D5D200779081 /* cpRatchetJoint.c */; };
+		C9BFC3E9152B644000692B07 /* cpRotaryLimitJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5A31528D5D200779081 /* cpRotaryLimitJoint.c */; };
+		C9BFC3EA152B644000692B07 /* cpSimpleMotor.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5A51528D5D200779081 /* cpSimpleMotor.c */; };
+		C9BFC3EB152B644000692B07 /* cpSlideJoint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5A71528D5D200779081 /* cpSlideJoint.c */; };
+		C9BFC3EC152B644000692B07 /* cpArbiter.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5AA1528D5D200779081 /* cpArbiter.c */; };
+		C9BFC3ED152B644000692B07 /* cpArray.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5AC1528D5D200779081 /* cpArray.c */; };
+		C9BFC3EE152B644000692B07 /* cpBB.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5AD1528D5D200779081 /* cpBB.c */; };
+		C9BFC3EF152B644000692B07 /* cpBBTree.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5AF1528D5D200779081 /* cpBBTree.c */; };
+		C9BFC3F0152B644000692B07 /* cpBody.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B01528D5D200779081 /* cpBody.c */; };
+		C9BFC3F1152B644000692B07 /* cpCollision.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B21528D5D200779081 /* cpCollision.c */; };
+		C9BFC3F2152B644000692B07 /* cpHashSet.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B31528D5D200779081 /* cpHashSet.c */; };
+		C9BFC3F3152B644000692B07 /* cpPolyShape.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B41528D5D200779081 /* cpPolyShape.c */; };
+		C9BFC3F4152B644000692B07 /* cpShape.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B61528D5D200779081 /* cpShape.c */; };
+		C9BFC3F5152B644000692B07 /* cpSpace.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5B81528D5D200779081 /* cpSpace.c */; };
+		C9BFC3F6152B644C00692B07 /* cpSpaceComponent.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5BA1528D5D200779081 /* cpSpaceComponent.c */; };
+		C9BFC3F7152B644C00692B07 /* cpSpaceHash.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5BB1528D5D200779081 /* cpSpaceHash.c */; };
+		C9BFC3F8152B644C00692B07 /* cpSpaceQuery.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5BC1528D5D200779081 /* cpSpaceQuery.c */; };
+		C9BFC3F9152B644C00692B07 /* cpSpaceStep.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5BD1528D5D200779081 /* cpSpaceStep.c */; };
+		C9BFC3FA152B644C00692B07 /* cpSpatialIndex.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5BE1528D5D200779081 /* cpSpatialIndex.c */; };
+		C9BFC3FB152B644C00692B07 /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C01528D5D200779081 /* cpSweep1D.c */; };
+		C9BFC3FC152B644C00692B07 /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C11528D5D200779081 /* cpVect.c */; };
+		C9BFC3FD152B645700692B07 /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C51528D5D200779081 /* body.cpp */; };
+		C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C71528D5D200779081 /* chipmunk.cpp */; };
+		C9BFC3FF152B645700692B07 /* circleshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C91528D5D200779081 /* circleshape.cpp */; };
+		C9BFC400152B645700692B07 /* polyshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CB1528D5D200779081 /* polyshape.cpp */; };
+		C9BFC401152B645700692B07 /* segmentshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CD1528D5D200779081 /* segmentshape.cpp */; };
+		C9BFC402152B645700692B07 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CF1528D5D200779081 /* shape.cpp */; };
+		C9BFC403152B645700692B07 /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D11528D5D200779081 /* space.cpp */; };
+		C9BFC404152B645700692B07 /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D41528D5D200779081 /* vect.cpp */; };
 		C9C95B6B1529C2AB008EA579 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9C95B691529C2AB008EA579 /* InfoPlist.strings */; };
 		C9C95B711529C2E4008EA579 /* chipmunk.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC58C1528D5D200779081 /* chipmunk.c */; };
 		C9C95B721529C2E4008EA579 /* cpConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5931528D5D200779081 /* cpConstraint.c */; };
@@ -120,6 +159,16 @@
 		C99DC5D31528D5D200779081 /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = types.hpp; sourceTree = "<group>"; };
 		C99DC5D41528D5D200779081 /* vect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vect.cpp; sourceTree = "<group>"; };
 		C99DC5D51528D5D200779081 /* vect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vect.hpp; sourceTree = "<group>"; };
+		C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "chipmunk++-mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BFC3CC152B62F200692B07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		C9BFC3CF152B62F200692B07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C9BFC3D0152B62F200692B07 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C9BFC3D1152B62F200692B07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9BFC3D4152B62F200692B07 /* chipmunk++-mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chipmunk++-mac-Info.plist"; sourceTree = "<group>"; };
+		C9BFC3D6152B62F200692B07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9BFC3D8152B62F200692B07 /* chipmunk++-mac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chipmunk++-mac-Prefix.pch"; sourceTree = "<group>"; };
+		C9BFC3D9152B62F200692B07 /* chipmunk___mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chipmunk___mac.h"; sourceTree = "<group>"; };
+		C9BFC3DA152B62F200692B07 /* chipmunk___mac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "chipmunk___mac.m"; sourceTree = "<group>"; };
 		C9C95B651529C2AB008EA579 /* chipmunk++.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "chipmunk++.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C95B681529C2AB008EA579 /* chipmunk++-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chipmunk++-Info.plist"; sourceTree = "<group>"; };
 		C9C95B6A1529C2AB008EA579 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -127,6 +176,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C9BFC3C6152B62F200692B07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BFC3CD152B62F200692B07 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C95B5F1529C2AB008EA579 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +200,8 @@
 				C99DC58B1528D5D200779081 /* chipmunk */,
 				C99DC5C41528D5D200779081 /* src */,
 				C9C95B661529C2AB008EA579 /* chipmunk++ */,
+				C9BFC3D2152B62F200692B07 /* chipmunk++-mac */,
+				C9BFC3CB152B62F200692B07 /* Frameworks */,
 				C99DC5461528D18100779081 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C95B651529C2AB008EA579 /* chipmunk++.framework */,
+				C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +311,45 @@
 			path = ../src;
 			sourceTree = "<group>";
 		};
+		C9BFC3CB152B62F200692B07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFC3CC152B62F200692B07 /* Cocoa.framework */,
+				C9BFC3CE152B62F200692B07 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9BFC3CE152B62F200692B07 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFC3CF152B62F200692B07 /* AppKit.framework */,
+				C9BFC3D0152B62F200692B07 /* CoreData.framework */,
+				C9BFC3D1152B62F200692B07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C9BFC3D2152B62F200692B07 /* chipmunk++-mac */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFC3D9152B62F200692B07 /* chipmunk___mac.h */,
+				C9BFC3DA152B62F200692B07 /* chipmunk___mac.m */,
+				C9BFC3D3152B62F200692B07 /* Supporting Files */,
+			);
+			path = "chipmunk++-mac";
+			sourceTree = "<group>";
+		};
+		C9BFC3D3152B62F200692B07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9BFC3D4152B62F200692B07 /* chipmunk++-mac-Info.plist */,
+				C9BFC3D5152B62F200692B07 /* InfoPlist.strings */,
+				C9BFC3D8152B62F200692B07 /* chipmunk++-mac-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C9C95B661529C2AB008EA579 /* chipmunk++ */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +371,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C9BFC3C7152B62F200692B07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C95B601529C2AB008EA579 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +388,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C9BFC3C9152B62F200692B07 /* chipmunk++-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9BFC3DE152B62F200692B07 /* Build configuration list for PBXNativeTarget "chipmunk++-mac" */;
+			buildPhases = (
+				C9BFC3C5152B62F200692B07 /* Sources */,
+				C9BFC3C6152B62F200692B07 /* Frameworks */,
+				C9BFC3C7152B62F200692B07 /* Headers */,
+				C9BFC3C8152B62F200692B07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "chipmunk++-mac";
+			productName = "chipmunk++-mac";
+			productReference = C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C9C95B641529C2AB008EA579 /* chipmunk++ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9C95B6F1529C2AB008EA579 /* Build configuration list for PBXNativeTarget "chipmunk++" */;
@@ -324,11 +448,20 @@
 			projectRoot = "";
 			targets = (
 				C9C95B641529C2AB008EA579 /* chipmunk++ */,
+				C9BFC3C9152B62F200692B07 /* chipmunk++-mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C9BFC3C8152B62F200692B07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BFC3D7152B62F200692B07 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C95B611529C2AB008EA579 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +515,50 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C9BFC3C5152B62F200692B07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BFC3FD152B645700692B07 /* body.cpp in Sources */,
+				C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */,
+				C9BFC3FF152B645700692B07 /* circleshape.cpp in Sources */,
+				C9BFC400152B645700692B07 /* polyshape.cpp in Sources */,
+				C9BFC401152B645700692B07 /* segmentshape.cpp in Sources */,
+				C9BFC402152B645700692B07 /* shape.cpp in Sources */,
+				C9BFC403152B645700692B07 /* space.cpp in Sources */,
+				C9BFC404152B645700692B07 /* vect.cpp in Sources */,
+				C9BFC3F6152B644C00692B07 /* cpSpaceComponent.c in Sources */,
+				C9BFC3F7152B644C00692B07 /* cpSpaceHash.c in Sources */,
+				C9BFC3F8152B644C00692B07 /* cpSpaceQuery.c in Sources */,
+				C9BFC3F9152B644C00692B07 /* cpSpaceStep.c in Sources */,
+				C9BFC3FA152B644C00692B07 /* cpSpatialIndex.c in Sources */,
+				C9BFC3FB152B644C00692B07 /* cpSweep1D.c in Sources */,
+				C9BFC3FC152B644C00692B07 /* cpVect.c in Sources */,
+				C9BFC3E0152B644000692B07 /* chipmunk.c in Sources */,
+				C9BFC3E1152B644000692B07 /* cpConstraint.c in Sources */,
+				C9BFC3E2152B644000692B07 /* cpDampedRotarySpring.c in Sources */,
+				C9BFC3E3152B644000692B07 /* cpDampedSpring.c in Sources */,
+				C9BFC3E4152B644000692B07 /* cpGearJoint.c in Sources */,
+				C9BFC3E5152B644000692B07 /* cpGrooveJoint.c in Sources */,
+				C9BFC3E6152B644000692B07 /* cpPinJoint.c in Sources */,
+				C9BFC3E7152B644000692B07 /* cpPivotJoint.c in Sources */,
+				C9BFC3E8152B644000692B07 /* cpRatchetJoint.c in Sources */,
+				C9BFC3E9152B644000692B07 /* cpRotaryLimitJoint.c in Sources */,
+				C9BFC3EA152B644000692B07 /* cpSimpleMotor.c in Sources */,
+				C9BFC3EB152B644000692B07 /* cpSlideJoint.c in Sources */,
+				C9BFC3EC152B644000692B07 /* cpArbiter.c in Sources */,
+				C9BFC3ED152B644000692B07 /* cpArray.c in Sources */,
+				C9BFC3EE152B644000692B07 /* cpBB.c in Sources */,
+				C9BFC3EF152B644000692B07 /* cpBBTree.c in Sources */,
+				C9BFC3F0152B644000692B07 /* cpBody.c in Sources */,
+				C9BFC3F1152B644000692B07 /* cpCollision.c in Sources */,
+				C9BFC3F2152B644000692B07 /* cpHashSet.c in Sources */,
+				C9BFC3F3152B644000692B07 /* cpPolyShape.c in Sources */,
+				C9BFC3F4152B644000692B07 /* cpShape.c in Sources */,
+				C9BFC3F5152B644000692B07 /* cpSpace.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C95B5E1529C2AB008EA579 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +606,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C9BFC3D5152B62F200692B07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9BFC3D6152B62F200692B07 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C9C95B691529C2AB008EA579 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,10 +629,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -465,7 +648,7 @@
 				HEADER_SEARCH_PATHS = ../chipmunk;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -473,13 +656,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -488,7 +670,57 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+			};
+			name = Release;
+		};
+		C9BFC3DC152B62F200692B07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chipmunk++-mac/chipmunk++-mac-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "chipmunk++-mac/chipmunk++-mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C9BFC3DD152B62F200692B07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "chipmunk++-mac/chipmunk++-mac-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "chipmunk++-mac/chipmunk++-mac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -544,6 +776,15 @@
 			buildConfigurations = (
 				C99DC5501528D18100779081 /* Debug */,
 				C99DC5511528D18100779081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9BFC3DE152B62F200692B07 /* Build configuration list for PBXNativeTarget "chipmunk++-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9BFC3DC152B62F200692B07 /* Debug */,
+				C9BFC3DD152B62F200692B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
