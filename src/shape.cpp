@@ -5,7 +5,7 @@ namespace cp {
 	}
 
 	Shape::~Shape() {
-		cpShapeFree(shape);
+//		cpShapeFree(shape);
 	}
 
 	Shape::operator cpShape*() const {
