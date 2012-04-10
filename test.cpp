@@ -13,7 +13,7 @@ int main() {
 	Space space;
 	space.setGravity(gravity);
 	
-	// Add a static lien segment shape for ground.
+	// Add a static line segment shape for ground.
 	// We'll make it slightly tilted so the ball will roll off.
 	// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.
 	SegmentShape ground(space.staticBody, Vect(-20, 5), Vect(20, -5), 0);
@@ -21,7 +21,7 @@ int main() {
 	space.addShape(ground);
 
 	// Now let's make a ball that falls onto the line and rolls off.
-	// First we need to make a cp::Body to hold the physical properties of the object.
+	// First we need to make a Body to hold the physical properties of the object.
 	// These include the mass, position, velocity, angle, etc. of the object.
 	// Then we attach collision shapes to the cpBody to give it a size and shape.
 	
