@@ -51,7 +51,7 @@
     <span class="n">Space</span> <span class="n">space</span><span class="p">;</span>
     <span class="n">space</span><span class="p">.</span><span class="n">setGravity</span><span class="p">(</span><span class="n">gravity</span><span class="p">);</span>
 
-    <span class="c1">// Add a static lien segment shape for ground.</span>
+    <span class="c1">// Add a static line segment shape for ground.</span>
     <span class="c1">// We'll make it slightly tilted so the ball will roll off.</span>
     <span class="c1">// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.</span>
     <span class="n">SegmentShape</span> <span class="n">ground</span><span class="p">(</span><span class="n">space</span><span class="p">.</span><span class="n">staticBody</span><span class="p">,</span> <span class="n">Vect</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Vect</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
