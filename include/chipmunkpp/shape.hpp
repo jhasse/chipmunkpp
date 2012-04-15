@@ -16,6 +16,7 @@ namespace cp {
 		void setElasticity(Float);
 		void setGroup(Group);
 		void setCollisionType(CollisionType);
+		void setOwning(bool);
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);

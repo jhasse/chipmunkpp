@@ -1,4 +1,4 @@
-#include "polyshape.hpp"
+#include "chipmunkpp/polyshape.hpp"
 
 namespace cp {
 	PolyShape::PolyShape(Body& body, const std::vector<cpVect>& verts, Vect offset)

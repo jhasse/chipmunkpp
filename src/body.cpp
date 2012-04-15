@@ -1,4 +1,4 @@
-#include "body.hpp"
+#include "chipmunkpp/body.hpp"
 
 namespace cp {
 	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), freeBody(true) {

@@ -1,4 +1,4 @@
-#include "shape.hpp"
+#include "chipmunkpp/shape.hpp"
 
 namespace cp {
 	Shape::Shape(cpShape* shape) : shape(shape) {

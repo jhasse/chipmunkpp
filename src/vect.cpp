@@ -1,4 +1,4 @@
-#include "vect.hpp"
+#include "chipmunkpp/vect.hpp"
 
 #include <iostream>
 #include <iomanip>

@@ -1,4 +1,4 @@
-#include "space.hpp"
+#include "chipmunkpp/space.hpp"
 
 namespace cp {
 	Space::Space() : space(cpSpaceNew()), staticBody(space->staticBody) {

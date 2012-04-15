@@ -1,4 +1,4 @@
-#include "segmentshape.hpp"
+#include "chipmunkpp/segmentshape.hpp"
 
 namespace cp {
 	SegmentShape::SegmentShape(Body& body, Vect a, Vect b, Float radius)
