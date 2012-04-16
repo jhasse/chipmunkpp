@@ -1,6 +1,8 @@
 #include "chipmunkpp/space.hpp"
 
-namespace cp {
+#include <algorithm>
+
+namespace cp {	
 	Space::Space() : space(cpSpaceNew()), staticBody(space->staticBody) {
 	}
 	
@@ -12,21 +14,28 @@ namespace cp {
 		return space;
 	}
 	
-	Shape& Space::addShape(Shape& shape) {
-		cpSpaceAddShape(space, shape);
-		return shape;
+	void Space::addShape(std::shared_ptr<Shape> shape) {
+		cpSpaceAddShape(space, *shape);
+		shapes.push_back(shape);
 	}
 	
-	void Space::removeShape(Shape& shape) {
-		cpSpaceRemoveShape(space, shape);
+	void Space::removeShape(std::shared_ptr<Shape> shape) {
+		cpSpaceRemoveShape(space, *shape);
+		shapes.erase(std::find(std::begin(shapes), std::end(shapes), shape));
 	}
 
 	void Space::setGravity(const Vect& vect) {
 		cpSpaceSetGravity(space, vect);
 	}
 
-	void Space::addBody(const Body& body) {
-		cpSpaceAddBody(space, body);
+	void Space::addBody(std::shared_ptr<Body> body) {
+		cpSpaceAddBody(space, *body);
+		bodies.push_back(body);
+	}
+	
+	void Space::removeBody(std::shared_ptr<Body> body) {
+		cpSpaceRemoveBody(space, *body);
+		bodies.erase(std::find(std::begin(bodies), std::end(bodies), body));
 	}
 
 	void Space::step(Float t) {

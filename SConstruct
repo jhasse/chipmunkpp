@@ -25,3 +25,5 @@ env.Append(CXXFLAGS="-std=c++0x",
            CPPPATH=Split("include chipmunk"))
 lib = env.Library(source=Glob("src/*.cpp")+Glob("chipmunk/*.c")+Glob("chipmunk/constraints/*.c"),
                   target="chipmunk++")
+
+env.Program(source="test.cpp", LIBS=lib)

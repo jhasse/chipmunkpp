@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <chipmunk.hpp>
+#include <memory>
 
 using namespace cp;
 using namespace std;
@@ -16,8 +17,9 @@ int main() {
 	// Add a static line segment shape for ground.
 	// We'll make it slightly tilted so the ball will roll off.
 	// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.
-	SegmentShape ground(space.staticBody, Vect(-20, 5), Vect(20, -5), 0);
-	ground.setFriction(1);
+	auto ground = make_shared<SegmentShape>(space.staticBody,
+	                                        Vect(-20, 5), Vect(20, -5), 0);
+	ground->setFriction(1);
 	space.addShape(ground);
 
 	// Now let's make a ball that falls onto the line and rolls off.
@@ -32,24 +34,24 @@ int main() {
 	// Use the cp::momentFor*() functions to help you approximate it.
 	const Float moment = momentForCircle(mass, 0, radius);
 
-	Body ballBody(mass, moment);
+	auto ballBody = make_shared<Body>(mass, moment);
 	space.addBody(ballBody);
-	ballBody.setPos(Vect(0, 15));
+	ballBody->setPos(Vect(0, 15));
 
 	// Now we create the collision shape for the ball.
 	// You can create multiple collision shapes that point to the same body.
 	// They will all be attached to the body and move arount to follow it.
-	CircleShape ballShape(ballBody, radius);
+	auto ballShape = make_shared<CircleShape>(*ballBody, radius);
 	space.addShape(ballShape);
-	ballShape.setFriction(0.7);
+	ballShape->setFriction(0.7);
 
 	// Now that it's all set up, we simulate all the objects in the space by
 	// stepping forward through time in small increments called steps.
 	// It is *highly* recommended to use a fixed size time step.
 	Float timeStep = 1.0/60.0;
 	for (Float time = 0; time < 2; time += timeStep) {
-        Vect pos = ballBody.getPos();
-		Vect vel = ballBody.getVel();
+        Vect pos = ballBody->getPos();
+		Vect vel = ballBody->getVel();
 		cout << setprecision(2) << fixed
 		     << "Time is "          << setw(5) << time << ". "
 		     << "ballBody is at "   << setw(5) << pos << ". "
