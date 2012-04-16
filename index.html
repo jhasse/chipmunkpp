@@ -1,9 +1,12 @@
+---
+title: Chipmunk++
+---
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Chipmunk++</title>
+    <title>{{ page.title }}</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -17,8 +20,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Chipmunk++</h1>
-<p>Chipmunk Physics for C++</p>
+        <h1>{{ page.title }}</h1>
+		<p>Chipmunk Physics for C++</p>
         <p class="view"><a href="https://github.com/jhasse/chipmunkpp">View the Project on GitHub <small>jhasse/chipmunkpp</small></a></p>
         <ul>
           <li><a href="https://github.com/jhasse/chipmunkpp/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -36,66 +39,69 @@
 <p>Chipmunk's Hello World example with Chipmunk++:</p>
 
 <div class="highlight">
-<pre><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &lt;iomanip&gt;</span>
-<span class="cp">#include &lt;chipmunk.hpp&gt;</span>
+{% highlight cpp %}
+#include <iostream>
+#include <iomanip>
+#include <chipmunk.hpp>
+#include <memory>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">cp</span><span class="p">;</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+using namespace cp;
+using namespace std;
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// cp::Vect is a 2D vector.</span>
-    <span class="n">Vect</span> <span class="n">gravity</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+int main() {
+	// cp::Vect is a 2D vector.
+	Vect gravity(0, -100);
 
-    <span class="c1">// Create an empty space.</span>
-    <span class="n">Space</span> <span class="n">space</span><span class="p">;</span>
-    <span class="n">space</span><span class="p">.</span><span class="n">setGravity</span><span class="p">(</span><span class="n">gravity</span><span class="p">);</span>
+	// Create an empty space.
+	Space space;
+	space.setGravity(gravity);
+	
+	// Add a static line segment shape for ground.
+	// We'll make it slightly tilted so the ball will roll off.
+	// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.
+	auto ground = make_shared<SegmentShape>(space.staticBody,
+	                                        Vect(-20, 5), Vect(20, -5), 0);
+	ground->setFriction(1);
+	space.addShape(ground);
 
-    <span class="c1">// Add a static line segment shape for ground.</span>
-    <span class="c1">// We'll make it slightly tilted so the ball will roll off.</span>
-    <span class="c1">// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.</span>
-    <span class="n">SegmentShape</span> <span class="n">ground</span><span class="p">(</span><span class="n">space</span><span class="p">.</span><span class="n">staticBody</span><span class="p">,</span> <span class="n">Vect</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">Vect</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="n">ground</span><span class="p">.</span><span class="n">setFriction</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">space</span><span class="p">.</span><span class="n">addShape</span><span class="p">(</span><span class="n">ground</span><span class="p">);</span>
+	// Now let's make a ball that falls onto the line and rolls off.
+	// First we need to make a Body to hold the physical properties of the object.
+	// These include the mass, position, velocity, angle, etc. of the object.
+	// Then we attach collision shapes to the cpBody to give it a size and shape.
+	
+	const Float radius = 5;
+	const Float mass = 1;
 
-    <span class="c1">// Now let's make a ball that falls onto the line and rolls off.</span>
-    <span class="c1">// First we need to make a Body to hold the physical properties of the object.</span>
-    <span class="c1">// These include the mass, position, velocity, angle, etc. of the object.</span>
-    <span class="c1">// Then we attach collision shapes to the cpBody to give it a size and shape.</span>
+	// The moment of inertia is like mass for rotation
+	// Use the cp::momentFor*() functions to help you approximate it.
+	const Float moment = momentForCircle(mass, 0, radius);
 
-    <span class="k">const</span> <span class="n">Float</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">Float</span> <span class="n">mass</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	auto ballBody = make_shared<Body>(mass, moment);
+	space.addBody(ballBody);
+	ballBody->setPos(Vect(0, 15));
 
-    <span class="c1">// The moment of inertia is like mass for rotation</span>
-    <span class="c1">// Use the cp::momentFor*() functions to help you approximate it.</span>
-    <span class="k">const</span> <span class="n">Float</span> <span class="n">moment</span> <span class="o">=</span> <span class="n">momentForCircle</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">radius</span><span class="p">);</span>
+	// Now we create the collision shape for the ball.
+	// You can create multiple collision shapes that point to the same body.
+	// They will all be attached to the body and move arount to follow it.
+	auto ballShape = make_shared<CircleShape>(*ballBody, radius);
+	space.addShape(ballShape);
+	ballShape->setFriction(0.7);
 
-    <span class="n">Body</span> <span class="n">ballBody</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">moment</span><span class="p">);</span>
-    <span class="n">space</span><span class="p">.</span><span class="n">addBody</span><span class="p">(</span><span class="n">ballBody</span><span class="p">);</span>
-    <span class="n">ballBody</span><span class="p">.</span><span class="n">setPos</span><span class="p">(</span><span class="n">Vect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
-
-    <span class="c1">// Now we create the collision shape for the ball.</span>
-    <span class="c1">// You can create multiple collision shapes that point to the same body.</span>
-    <span class="c1">// They will all be attached to the body and move arount to follow it.</span>
-    <span class="n">CircleShape</span> <span class="n">ballShape</span><span class="p">(</span><span class="n">ballBody</span><span class="p">,</span> <span class="n">radius</span><span class="p">);</span>
-    <span class="n">space</span><span class="p">.</span><span class="n">addShape</span><span class="p">(</span><span class="n">ballShape</span><span class="p">);</span>
-    <span class="n">ballShape</span><span class="p">.</span><span class="n">setFriction</span><span class="p">(</span><span class="mf">0.7</span><span class="p">);</span>
-
-    <span class="c1">// Now that it's all set up, we simulate all the objects in the space by</span>
-    <span class="c1">// stepping forward through time in small increments called steps.</span>
-    <span class="c1">// It is *highly* recommended to use a fixed size time step.</span>
-    <span class="n">Float</span> <span class="n">timeStep</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">60.0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">Float</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">time</span> <span class="o">+=</span> <span class="n">timeStep</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Vect</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">ballBody</span><span class="p">.</span><span class="n">getPos</span><span class="p">();</span>
-        <span class="n">Vect</span> <span class="n">vel</span> <span class="o">=</span> <span class="n">ballBody</span><span class="p">.</span><span class="n">getVel</span><span class="p">();</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span>
-             <span class="o">&lt;&lt;</span> <span class="s">"Time is "</span>          <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">time</span> <span class="o">&lt;&lt;</span> <span class="s">". "</span>
-             <span class="o">&lt;&lt;</span> <span class="s">"ballBody is at "</span>   <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">pos</span> <span class="o">&lt;&lt;</span> <span class="s">". "</span>
-             <span class="o">&lt;&lt;</span> <span class="s">"It's velocity is "</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">vel</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-        <span class="n">space</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">timeStep</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre>
+	// Now that it's all set up, we simulate all the objects in the space by
+	// stepping forward through time in small increments called steps.
+	// It is *highly* recommended to use a fixed size time step.
+	Float timeStep = 1.0/60.0;
+	for (Float time = 0; time < 2; time += timeStep) {
+        Vect pos = ballBody->getPos();
+		Vect vel = ballBody->getVel();
+		cout << setprecision(2) << fixed
+		     << "Time is "          << setw(5) << time << ". "
+		     << "ballBody is at "   << setw(5) << pos << ". "
+		     << "It's velocity is " << setw(5) << vel << endl;
+		space.step(timeStep);
+	}
+}
+{% endhighlight %}
 </div>
 
       </section>
