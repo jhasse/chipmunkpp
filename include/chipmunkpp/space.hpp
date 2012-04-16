@@ -3,8 +3,8 @@
 #include "shape.hpp"
 #include "body.hpp"
 #include "vect.hpp"
+#include "memory.hpp"
 
-#include <memory>
 #include <vector>
 
 namespace cp {

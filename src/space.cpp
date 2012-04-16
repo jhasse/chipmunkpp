@@ -21,7 +21,7 @@ namespace cp {
 	
 	void Space::removeShape(std::shared_ptr<Shape> shape) {
 		cpSpaceRemoveShape(space, *shape);
-		shapes.erase(std::find(std::begin(shapes), std::end(shapes), shape));
+		shapes.erase(std::find(shapes.begin(), shapes.end(), shape));
 	}
 
 	void Space::setGravity(const Vect& vect) {
@@ -35,7 +35,7 @@ namespace cp {
 	
 	void Space::removeBody(std::shared_ptr<Body> body) {
 		cpSpaceRemoveBody(space, *body);
-		bodies.erase(std::find(std::begin(bodies), std::end(bodies), body));
+		bodies.erase(std::find(bodies.begin(), bodies.end(), body));
 	}
 
 	void Space::step(Float t) {

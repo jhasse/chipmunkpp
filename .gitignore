@@ -1,5 +1,9 @@
 doc/html/*
 *.DS_Store
 *.os
+*.o
 .sconsign.dblite
 *.xcuserstate
+test
+
+libchipmunk++.a
