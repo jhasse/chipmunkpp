@@ -13,14 +13,14 @@ if env['PLATFORM'] == 'win32':
 	env = Environment(tools=['mingw'])
 
 if env['PLATFORM'] == 'darwin':
-	env = Environment(CXX='clang++', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++', CC='clang')
+	env = Environment(CXX='clang++', CC='clang', CPPDEFINES=['CHIPMUNKPP_BOOST'], CPPPATH='/opt/local/include')
 
 if debug:
 	env.Append(CCFLAGS = '-g -Wall')
 else:
 	env.Append(CCFLAGS = '-O2 -DNDEBUG')
 
-env.Append(CXXFLAGS="-std=c++0x",
+env.Append(CXXFLAGS="-std=c++11",
            CFLAGS="-std=c99",
            CPPPATH=Split("include chipmunk/include/chipmunk"))
 lib = env.Library(source=Glob("src/*.cpp")+Glob("chipmunk/constraints/*.c"),
