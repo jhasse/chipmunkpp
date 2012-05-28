@@ -31,4 +31,12 @@ namespace cp {
 	void Shape::setCollisionType(CollisionType t) {
 		cpShapeSetCollisionType(shape, t);
 	}
+	
+	void Shape::setUserData(DataPointer p) {
+		cpShapeSetUserData(shape, p);
+	}
+	
+	DataPointer Shape::getUserData() const {
+		return cpShapeGetUserData(shape);
+	}
 }

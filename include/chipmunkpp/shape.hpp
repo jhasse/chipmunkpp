@@ -17,6 +17,8 @@ namespace cp {
 		void setGroup(Group);
 		void setCollisionType(CollisionType);
 		void setOwning(bool);
+		void setUserData(DataPointer);
+		DataPointer getUserData() const;
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
