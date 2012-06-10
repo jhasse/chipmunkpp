@@ -8,7 +8,6 @@
 namespace cp {
 	class Shape {
 	public:
-		Shape(cpShape*);
 		virtual ~Shape();
 		operator cpShape*() const;
 		bool pointQuery(Vect) const;
@@ -23,6 +22,8 @@ namespace cp {
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
 	protected:
+		Shape(cpShape*);
+
 		cpShape* shape;
 	};
 }

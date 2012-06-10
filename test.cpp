@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <memory>
 #include <chipmunk.hpp>
 
 using namespace cp;
