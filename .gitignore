@@ -5,5 +5,5 @@ doc/html/*
 .sconsign.dblite
 *.xcuserstate
 test
-
+*.exe
 libchipmunk++.a
