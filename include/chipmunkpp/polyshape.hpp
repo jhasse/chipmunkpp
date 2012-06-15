@@ -8,7 +8,7 @@
 namespace cp {
 	class PolyShape : public Shape {
 	public:
-		PolyShape(Body&, const std::vector<cpVect>& verts, Vect offset = Vect(0, 0));
+		PolyShape(std::shared_ptr<Body>, const std::vector<cpVect>& verts, Vect offset = Vect(0, 0));
 		int getNumVerts() const;
 		cp::Vect getVert(int);
 	};

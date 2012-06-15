@@ -40,7 +40,7 @@ int main() {
 	// Now we create the collision shape for the ball.
 	// You can create multiple collision shapes that point to the same body.
 	// They will all be attached to the body and move arount to follow it.
-	auto ballShape = make_shared<CircleShape>(*ballBody, radius);
+	auto ballShape = make_shared<CircleShape>(ballBody, radius);
 	space.addShape(ballShape);
 	ballShape->setFriction(0.7);
 

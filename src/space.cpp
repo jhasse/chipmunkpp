@@ -1,9 +1,10 @@
 #include "chipmunkpp/space.hpp"
+#include "chipmunkpp/body.hpp"
 
 #include <algorithm>
 
 namespace cp {	
-	Space::Space() : space(cpSpaceNew()), staticBody(space->staticBody) {
+	Space::Space() : space(cpSpaceNew()), staticBody(std::make_shared<Body>(space->staticBody)) {
 	}
 	
 	Space::~Space() {

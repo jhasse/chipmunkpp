@@ -7,6 +7,6 @@
 namespace cp {
 	class SegmentShape : public Shape {
 	public:
-		SegmentShape(Body&, Vect a, Vect b, Float radius);
+		SegmentShape(std::shared_ptr<Body>, Vect a, Vect b, Float radius);
 	};
 }

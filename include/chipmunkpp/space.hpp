@@ -1,13 +1,14 @@
 #pragma once
 
 #include "shape.hpp"
-#include "body.hpp"
 #include "vect.hpp"
 #include "memory.hpp"
 
 #include <vector>
 
 namespace cp {
+	class Body;
+
 	class Space {
 	public:
 		Space();
@@ -26,6 +27,6 @@ namespace cp {
 		std::vector<std::shared_ptr<Shape>> shapes;
 		std::vector<std::shared_ptr<Body>> bodies;
 	public:
-		Body staticBody;
+		std::shared_ptr<Body> staticBody;
 	};
 }

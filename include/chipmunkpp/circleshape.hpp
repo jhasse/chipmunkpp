@@ -6,6 +6,6 @@
 namespace cp {
 	class CircleShape : public Shape {
 	public:
-		CircleShape(Body&, Float radius, Vect offset = Vect(0, 0));
+		CircleShape(std::shared_ptr<Body>, Float radius, Vect offset = Vect(0, 0));
 	};
 }

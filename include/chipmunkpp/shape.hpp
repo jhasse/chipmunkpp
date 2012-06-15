@@ -2,10 +2,13 @@
 
 #include "vect.hpp"
 #include "types.hpp"
+#include "memory.hpp"
 
 #include <chipmunk.h>
 
 namespace cp {
+	class Body;
+
 	class Shape {
 	public:
 		virtual ~Shape();
@@ -17,12 +20,15 @@ namespace cp {
 		void setCollisionType(CollisionType);
 		void setOwning(bool);
 		void setUserData(DataPointer);
+		void setBody(std::shared_ptr<Body> body);
 		DataPointer getUserData() const;
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
+		
+		std::shared_ptr<Body> body;
 	protected:
-		Shape(cpShape*);
+		Shape(cpShape*, std::shared_ptr<Body>);
 
 		cpShape* shape;
 	};

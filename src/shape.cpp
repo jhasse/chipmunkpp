@@ -1,7 +1,8 @@
 #include "chipmunkpp/shape.hpp"
+#include "chipmunkpp/body.hpp"
 
 namespace cp {
-	Shape::Shape(cpShape* shape) : shape(shape) {
+	Shape::Shape(cpShape* s, std::shared_ptr<Body> b) : body(b), shape(s) {
 	}
 
 	Shape::~Shape() {
@@ -38,5 +39,10 @@ namespace cp {
 	
 	DataPointer Shape::getUserData() const {
 		return cpShapeGetUserData(shape);
+	}
+	
+	void Shape::setBody(std::shared_ptr<Body> b) {
+		cpShapeSetBody(shape, *b);
+		body = b;
 	}
 }

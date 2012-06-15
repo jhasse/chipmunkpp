@@ -1,7 +1,7 @@
 #include "chipmunkpp/segmentshape.hpp"
 
 namespace cp {
-	SegmentShape::SegmentShape(Body& body, Vect a, Vect b, Float radius)
-		: Shape(cpSegmentShapeNew(body, a, b, radius)) {
+	SegmentShape::SegmentShape(std::shared_ptr<Body> body, Vect a, Vect b, Float radius)
+		: Shape(cpSegmentShapeNew(*body, a, b, radius), body) {
 	}
 }
