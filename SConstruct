@@ -20,7 +20,7 @@ if debug:
 else:
 	env.Append(CCFLAGS = '-O2 -DNDEBUG')
 
-env.Append(CXXFLAGS="-std=c++11",
+env.Append(CXXFLAGS="-std=c++0x",
            CFLAGS="-std=c99",
            CPPPATH=Split("include chipmunk/include/chipmunk"))
 lib = env.Library(source=Glob("src/*.cpp"),
