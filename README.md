@@ -1,14 +1,14 @@
 Chipmunk++
 ==========
 
-C++ wrapper for [Chipmunk](http://chipmunk-physics.net/).
+C++11 wrapper for [Chipmunk](http://chipmunk-physics.net/).
 
 
 Build
 -----
 
 Extract the [latest version of Chipmunk](http://chipmunk-physics.net/release/ChipmunkLatest.tgz) to a
-folder called 'chipmunk'. Run `cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF .` and `make` inside that folder.
+folder called *chipmunk*. Run `cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF .` and `make` inside that folder.
 
 To compile Chipmunk on Windows using MinGW:
 ```
