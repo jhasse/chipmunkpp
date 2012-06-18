@@ -12,7 +12,7 @@ int main() {
 	// Create an empty space.
 	Space space;
 	space.setGravity(gravity);
-	
+
 	// Add a static line segment shape for ground.
 	// We'll make it slightly tilted so the ball will roll off.
 	// We attach it to space.staticBody to tell Chipmunk it shouldn't be movable.
@@ -25,7 +25,7 @@ int main() {
 	// First we need to make a Body to hold the physical properties of the object.
 	// These include the mass, position, velocity, angle, etc. of the object.
 	// Then we attach collision shapes to the cpBody to give it a size and shape.
-	
+
 	const Float radius = 5;
 	const Float mass = 1;
 

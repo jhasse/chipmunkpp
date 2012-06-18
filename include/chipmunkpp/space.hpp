@@ -33,8 +33,8 @@ namespace cp {
 		std::vector<std::shared_ptr<Body>> bodies;
 
 		struct SegmentQueryData {
-			decltype(Space::shapes) shapes;
-			SegmentQueryFunc func;
+			const decltype(Space::shapes)& shapes;
+			SegmentQueryFunc& func;
 		};
 	public:
 		std::shared_ptr<Body> staticBody;
