@@ -5,6 +5,7 @@
 #include "memory.hpp"
 
 #include <chipmunk.h>
+#include <functional>
 
 namespace cp {
 	class Body;
