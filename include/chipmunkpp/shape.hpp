@@ -25,7 +25,7 @@ namespace cp {
 	private:
 		Shape(const Shape&);
 		const Shape& operator=(const Shape&);
-		
+
 		std::shared_ptr<Body> body;
 	protected:
 		Shape(cpShape*, std::shared_ptr<Body>);

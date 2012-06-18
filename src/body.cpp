@@ -3,16 +3,16 @@
 namespace cp {
 	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), freeBody(true) {
 	}
-	
+
 	Body::~Body() {
 		if (freeBody) {
 			cpBodyFree(body);
 		}
 	}
-	
+
 	Body::Body(cpBody* body) : body(body), freeBody(false) {
 	}
-	
+
 	Body::operator cpBody*() const {
 		return body;
 	}
@@ -28,15 +28,15 @@ namespace cp {
 	Vect Body::getVel() const {
 		return cpBodyGetVel(body);
 	}
-	
+
 	void Body::setVel(Vect velocity) {
 		cpBodySetVel(body, velocity);
 	}
-	
+
 	DataPointer Body::getUserData() const {
 		return cpBodyGetUserData(body);
 	}
-	
+
 	void Body::setUserData(DataPointer p) {
 		cpBodySetUserData(body, p);
 	}

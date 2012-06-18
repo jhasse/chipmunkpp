@@ -5,4 +5,5 @@ namespace cp {
 	typedef cpGroup Group;
 	typedef cpCollisionType CollisionType;
 	typedef cpDataPointer DataPointer;
+	typedef cpLayers Layers;
 }

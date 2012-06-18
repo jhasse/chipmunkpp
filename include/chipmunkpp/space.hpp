@@ -7,6 +7,8 @@
 #include <vector>
 
 namespace cp {
+	typedef std::function<void(std::shared_ptr<Shape>, Float, Vect)> SegmentQueryFunc;
+
 	class Body;
 
 	class Space {
@@ -20,12 +22,20 @@ namespace cp {
 		void addBody(std::shared_ptr<Body>);
 		void removeBody(std::shared_ptr<Body>);
 		void step(Float);
+		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc);
 	private:
 		Space(const Space&);
 		const Space& operator=(const Space&);
+		static void segmentQueryFunc(cpShape*, cpFloat, cpVect, void*);
+
 		cpSpace* space;
 		std::vector<std::shared_ptr<Shape>> shapes;
 		std::vector<std::shared_ptr<Body>> bodies;
+
+		struct SegmentQueryData {
+			decltype(Space::shapes) shapes;
+			SegmentQueryFunc func;
+		};
 	public:
 		std::shared_ptr<Body> staticBody;
 	};
