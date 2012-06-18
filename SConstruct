@@ -13,7 +13,7 @@ if env['PLATFORM'] == 'win32':
 	env = Environment(tools=['mingw'])
 
 if env['PLATFORM'] == 'darwin':
-	env = Environment(CXX='clang++', CC='clang', CPPDEFINES=['CHIPMUNKPP_BOOST'], CPPPATH='/opt/local/include')
+	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++')
 
 if debug:
 	env.Append(CCFLAGS = '-g -Wall')
