@@ -4,11 +4,25 @@
 
 namespace cp {
 	typedef cpFloat Float;
-	typedef cpGroup Group;
 	typedef cpCollisionType CollisionType;
 	typedef cpDataPointer DataPointer;
-	typedef cpLayers Layers;
 
-	constexpr Layers ALL_LAYERS = CP_ALL_LAYERS;
-	constexpr Group NO_GROUP = CP_NO_GROUP;
+	class Layers {
+	public:
+		Layers(cpLayers);
+		cpLayers get() const;
+	private:
+		cpLayers l;
+	};
+
+	class Group {
+	public:
+		Group(cpGroup);
+		cpGroup get() const;
+	private:
+		cpGroup g;
+	};
+
+	const static Layers ALL_LAYERS(CP_ALL_LAYERS);
+	const static Group NO_GROUP(CP_NO_GROUP);
 }

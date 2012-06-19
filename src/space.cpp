@@ -57,6 +57,6 @@ namespace cp {
 	void Space::segmentQuery(Vect a, Vect b, Layers layers, Group group,
 	                         SegmentQueryFunc func) {
 		SegmentQueryData data{ shapes, func };
-		cpSpaceSegmentQuery(space, a, b, layers, group, segmentQueryFunc, &data);
+		cpSpaceSegmentQuery(space, a, b, layers.get(), group.get(), segmentQueryFunc, &data);
 	}
 }

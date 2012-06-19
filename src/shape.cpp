@@ -26,7 +26,7 @@ namespace cp {
 	}
 
 	void Shape::setGroup(Group g) {
-		cpShapeSetGroup(shape, g);
+		cpShapeSetGroup(shape, g.get());
 	}
 
 	void Shape::setCollisionType(CollisionType t) {
