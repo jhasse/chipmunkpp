@@ -17,6 +17,14 @@ namespace cp {
 		return cpShapePointQuery(shape, p);
 	}
 
+	bool Shape::segmentQuery(Vect a, Vect b, SegmentQueryInfo& info) {
+		cpSegmentQueryInfo i;
+		bool rtn = cpShapeSegmentQuery(shape, a, b, &i);
+		info.t = i.t;
+		info.n = i.n;
+		return rtn;
+	}
+
 	void Shape::setFriction(Float f) {
 		cpShapeSetFriction(shape, f);
 	}

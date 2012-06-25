@@ -14,6 +14,7 @@ namespace cp {
 	private:
 		cpLayers l;
 	};
+	const static Layers ALL_LAYERS(CP_ALL_LAYERS);
 
 	class Group {
 	public:
@@ -22,7 +23,5 @@ namespace cp {
 	private:
 		cpGroup g;
 	};
-
-	const static Layers ALL_LAYERS(CP_ALL_LAYERS);
 	const static Group NO_GROUP(CP_NO_GROUP);
 }

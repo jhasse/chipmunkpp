@@ -3,18 +3,22 @@
 #include "vect.hpp"
 #include "types.hpp"
 #include "memory.hpp"
+#include "segmentqueryinfo.hpp"
 
 #include <chipmunk.h>
 #include <functional>
 
 namespace cp {
 	class Body;
+	class Space;
 
 	class Shape {
+		friend class Space;
 	public:
 		virtual ~Shape();
 		operator cpShape*() const;
 		bool pointQuery(Vect) const;
+		bool segmentQuery(Vect a, Vect b, SegmentQueryInfo&);
 		void setFriction(Float);
 		void setElasticity(Float);
 		void setGroup(Group);
@@ -28,6 +32,7 @@ namespace cp {
 		const Shape& operator=(const Shape&);
 
 		std::shared_ptr<Body> body;
+		std::weak_ptr<Space> space;
 	protected:
 		Shape(cpShape*, std::shared_ptr<Body>);
 
