@@ -17,11 +17,13 @@ namespace cp {
 		return cpShapePointQuery(shape, p);
 	}
 
-	bool Shape::segmentQuery(Vect a, Vect b, SegmentQueryInfo& info) {
+	bool Shape::segmentQuery(Vect a, Vect b, SegmentQueryInfo* const info) {
 		cpSegmentQueryInfo i;
 		bool rtn = cpShapeSegmentQuery(shape, a, b, &i);
-		info.t = i.t;
-		info.n = i.n;
+		if (info) {
+			info->t = i.t;
+			info->n = i.n;
+		}
 		return rtn;
 	}
 

@@ -4,11 +4,11 @@
 #include <iomanip>
 
 namespace cp {
-	Vect::Vect(Float x, Float y) : v(cpv(x, y)) {
-	}
+	Vect::Vect() : v(cpvzero) {}
 
-	Vect::Vect(const cpVect& vect) : v(vect) {
-	}
+	Vect::Vect(Float x, Float y) : v(cpv(x, y)) {}
+
+	Vect::Vect(const cpVect& vect) : v(vect) {}
 
 	Vect::operator cpVect() const {
 		return v;

@@ -7,6 +7,7 @@
 namespace cp {
 	class Vect {
 	public:
+		Vect();
 		Vect(Float, Float);
 		Vect(const cpVect&);
 		operator cpVect() const;

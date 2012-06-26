@@ -18,7 +18,7 @@ namespace cp {
 		virtual ~Shape();
 		operator cpShape*() const;
 		bool pointQuery(Vect) const;
-		bool segmentQuery(Vect a, Vect b, SegmentQueryInfo&);
+		bool segmentQuery(Vect a, Vect b, SegmentQueryInfo* = nullptr);
 		void setFriction(Float);
 		void setElasticity(Float);
 		void setGroup(Group);
