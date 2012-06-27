@@ -16,12 +16,12 @@ namespace cp {
 		return space;
 	}
 
-	void Space::addShape(std::shared_ptr<Shape> shape) {
+	void Space::add(std::shared_ptr<Shape> shape) {
 		cpSpaceAddShape(space, *shape);
 		shapes.push_back(shape);
 	}
 
-	void Space::removeShape(std::shared_ptr<Shape> shape) {
+	void Space::remove(std::shared_ptr<Shape> shape) {
 		cpSpaceRemoveShape(space, *shape);
 		shapes.erase(std::find(shapes.begin(), shapes.end(), shape));
 	}
@@ -30,12 +30,12 @@ namespace cp {
 		cpSpaceSetGravity(space, vect);
 	}
 
-	void Space::addBody(std::shared_ptr<Body> body) {
+	void Space::add(std::shared_ptr<Body> body) {
 		cpSpaceAddBody(space, *body);
 		bodies.push_back(body);
 	}
 
-	void Space::removeBody(std::shared_ptr<Body> body) {
+	void Space::remove(std::shared_ptr<Body> body) {
 		cpSpaceRemoveBody(space, *body);
 		bodies.erase(std::find(bodies.begin(), bodies.end(), body));
 	}

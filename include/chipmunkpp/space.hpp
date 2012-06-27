@@ -16,11 +16,11 @@ namespace cp {
 		Space();
 		~Space();
 		operator cpSpace*();
-		void addShape(std::shared_ptr<Shape>);
-		void removeShape(std::shared_ptr<Shape>);
+		void add(std::shared_ptr<Shape>);
+		void add(std::shared_ptr<Body>);
+		void remove(std::shared_ptr<Shape>);
+		void remove(std::shared_ptr<Body>);
 		void setGravity(const Vect&);
-		void addBody(std::shared_ptr<Body>);
-		void removeBody(std::shared_ptr<Body>);
 		void step(Float);
 		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc);
 	private:

@@ -19,7 +19,7 @@ int main() {
 	auto ground = make_shared<SegmentShape>(space.staticBody,
 	                                        Vect(-20, 5), Vect(20, -5), 0);
 	ground->setFriction(1);
-	space.addShape(ground);
+	space.add(ground);
 
 	// Now let's make a ball that falls onto the line and rolls off.
 	// First we need to make a Body to hold the physical properties of the object.
@@ -34,14 +34,14 @@ int main() {
 	const Float moment = momentForCircle(mass, 0, radius);
 
 	auto ballBody = make_shared<Body>(mass, moment);
-	space.addBody(ballBody);
+	space.add(ballBody);
 	ballBody->setPos(Vect(0, 15));
 
 	// Now we create the collision shape for the ball.
 	// You can create multiple collision shapes that point to the same body.
 	// They will all be attached to the body and move arount to follow it.
 	auto ballShape = make_shared<CircleShape>(ballBody, radius);
-	space.addShape(ballShape);
+	space.add(ballShape);
 	ballShape->setFriction(0.7);
 
 	// Now that it's all set up, we simulate all the objects in the space by
