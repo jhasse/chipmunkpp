@@ -8,6 +8,7 @@ except NotImplementedError:
 	pass
 
 debug = int(ARGUMENTS.get('debug', 0))
+unit_test = int(ARGUMENTS.get('unit_test', 0))
 
 if env['PLATFORM'] == 'win32':
 	env = Environment(tools=['mingw'])
@@ -25,4 +26,10 @@ env.Append(CXXFLAGS="-std=c++0x",
            CPPPATH=Split("include chipmunk/include/chipmunk"))
 lib = env.Library(source=Glob("src/*.cpp"),
                   target="chipmunk++")
-env.Program(source="test.cpp", LIBPATH='chipmunk/src', LIBS=[lib, 'chipmunk'])
+env.Append(LIBPATH='chipmunk/src', LIBS=[lib, 'chipmunk'])
+env.Program(source="test.cpp")
+
+if unit_test:
+	env = env.Clone()
+	env.Append(LIBS=['boost_unit_test_framework'], CCFLAGS='-DBOOST_TEST_DYN_LINK')
+	env.Program(target="unit_test/unit_test", source=Glob("unit_test/*.cpp"))

@@ -4,22 +4,106 @@
 #include <iomanip>
 
 namespace cp {
-	Vect::Vect() : v(cpvzero) {}
+	bool operator==(const Vect& lhs, const Vect& rhs) {
+		return lhs.x() == rhs.x() && lhs.y() == rhs.y();
+	}
 
-	Vect::Vect(Float x, Float y) : v(cpv(x, y)) {}
+	bool operator!=(const Vect& lhs, const Vect& rhs) {
+		return lhs.x() != rhs.x() || lhs.y() != rhs.y();
+	}
 
-	Vect::Vect(const cpVect& vect) : v(vect) {}
+	double operator*(const Vect& lhs, const Vect& rhs) {
+		return lhs.x() * rhs.x() +lhs.y() * rhs.y();
+	}
+
+	Vect operator*(const Vect& lhs, const double v) {
+		return Vect(lhs.x() * v, lhs.y() * v);
+	}
+
+	Vect operator/(const Vect& lhs, const double v) {
+		return Vect(lhs.x() / v, lhs.y() / v);
+	}
+
+	Vect operator*(const double v, const Vect& rhs) {
+		return Vect(rhs.x() * v, rhs.y() * v);
+	}
+
+	Vect operator/(const double v, const Vect& rhs) {
+		return Vect(rhs.x() / v, rhs.y() / v);
+	}
+
+	Vect operator-(const Vect& lhs, const Vect& rhs) {
+		return Vect(lhs.x() - rhs.x(), lhs.y() - rhs.y());
+	}
+
+	Vect operator+(const Vect& lhs, const Vect& rhs) {
+		return Vect(lhs.x() + rhs.x(), lhs.y() + rhs.y());
+	}
+
+	Vect::Vect() : vect(cpvzero) {}
+
+	Vect::Vect(Float x, Float y) : vect(cpv(x, y)) {}
+
+	Vect::Vect(const cpVect& vect) : vect(vect) {}
 
 	Vect::operator cpVect() const {
-		return v;
+		return vect;
 	}
 
 	Float Vect::x() const {
-		return v.x;
+		return vect.x;
 	}
 
 	Float Vect::y() const {
-		return v.y;
+		return vect.y;
+	}
+
+	Vect& Vect::operator/=(const double v) {
+		vect.x /= v;
+		vect.y /= v;
+		return *this;
+	}
+
+	Vect& Vect::operator*=(const double v) {
+		vect.x *= v;
+		vect.y *= v;
+		return *this;
+	}
+
+	Vect& Vect::operator-=(const Vect& rhs) {
+		vect.x -= rhs.x();
+		vect.y -= rhs.y();
+		return *this;
+	}
+
+	Vect& Vect::operator-=(const double v) {
+		vect.x -= v;
+		vect.y -= v;
+		return *this;
+	}
+
+	Vect& Vect::operator+=(const double v) {
+		vect.x += v;
+		vect.y += v;
+		return *this;
+	}
+
+	Vect& Vect::operator+=(const Vect& rhs) {
+		vect.x += rhs.x();
+		vect.y += rhs.y();
+		return *this;
+	}
+
+	Vect& Vect::operator++() {
+		++vect.x;
+		++vect.y;
+		return *this;
+	}
+
+	Vect& Vect::operator--() {
+		--vect.x;
+		--vect.y;
+		return *this;
 	}
 }
 

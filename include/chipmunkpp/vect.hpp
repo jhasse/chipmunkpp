@@ -13,9 +13,27 @@ namespace cp {
 		operator cpVect() const;
 		Float x() const;
 		Float y() const;
+		Vect& operator/=(const double v);
+		Vect& operator*=(const double v);
+		Vect& operator-=(const Vect& rhs);
+		Vect& operator-=(const double v);
+		Vect& operator+=(const double v);
+		Vect& operator+=(const Vect& rhs);
+		Vect& operator++();
+		Vect& operator--();
 	private:
-		cpVect v;
+		cpVect vect;
 	};
+
+	bool operator==(const Vect& lhs, const Vect& rhs);
+	bool operator!=(const Vect& lhs, const Vect& rhs);
+	Vect operator*(const Vect& lhs, const double v);
+	Vect operator/(const Vect& lhs, const double v);
+	Vect operator*(const double v, const Vect& rhs);
+	Vect operator/(const double v, const Vect& rhs);
+	double operator*(const Vect& lhs, const Vect& rhs);
+	Vect operator-(const Vect& lhs, const Vect& rhs);
+	Vect operator+(const Vect& lhs, const Vect& rhs);
 }
 
-std::ostream& operator<<(std::ostream& out, const cp::Vect& vec);
+std::ostream& operator<<(std::ostream&, const cp::Vect&);
