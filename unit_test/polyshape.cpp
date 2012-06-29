@@ -13,7 +13,7 @@ BOOST_AUTO_TEST_CASE(PolyShapeTest) {
 		auto shape = std::make_shared<PolyShape>(space.staticBody, vects);
 		space.add(shape);
 		BOOST_CHECK_EQUAL(shape->getNumVerts(), vects.size());
-		for (int i = 0; i < vects.size(); ++i) {
+		for (size_t i = 0; i < vects.size(); ++i) {
 			BOOST_CHECK(shape->getVert(i) == vects[i]);
 		}
 	};
