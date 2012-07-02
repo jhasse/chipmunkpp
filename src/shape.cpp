@@ -14,12 +14,12 @@ namespace cp {
 	}
 
 	bool Shape::pointQuery(Vect p) const {
-		return cpShapePointQuery(shape, p);
+		return cpShapePointQuery(shape, p) == cpTrue;
 	}
 
 	bool Shape::segmentQuery(Vect a, Vect b, SegmentQueryInfo* const info) {
 		cpSegmentQueryInfo i;
-		bool rtn = cpShapeSegmentQuery(shape, a, b, &i);
+		bool rtn = cpShapeSegmentQuery(shape, a, b, &i) == cpTrue;
 		if (info) {
 			info->t = i.t;
 			info->n = i.n;
