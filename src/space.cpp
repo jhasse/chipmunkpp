@@ -9,6 +9,10 @@ namespace cp {
 	}
 
 	Space::~Space() {
+		for (auto& shape : shapes) {
+			cpSpaceRemoveShape(space, *shape);
+		}
+		shapes.clear();
 		cpSpaceFree(space);
 	}
 
