@@ -23,6 +23,7 @@ namespace cp {
 		void setElasticity(Float);
 		void setGroup(Group);
 		void setCollisionType(CollisionType);
+		void setLayers(Layers);
 		void setOwning(bool);
 		void setUserData(DataPointer);
 		void setBody(std::shared_ptr<Body> body);

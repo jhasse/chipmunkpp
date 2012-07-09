@@ -5,111 +5,119 @@
 
 namespace cp {
 	bool operator==(const Vect& lhs, const Vect& rhs) {
-		return lhs.x() == rhs.x() && lhs.y() == rhs.y();
+		return lhs.x == rhs.x && lhs.y == rhs.y;
 	}
 
 	bool operator!=(const Vect& lhs, const Vect& rhs) {
-		return lhs.x() != rhs.x() || lhs.y() != rhs.y();
+		return lhs.x != rhs.x || lhs.y != rhs.y;
 	}
 
 	double operator*(const Vect& lhs, const Vect& rhs) {
-		return lhs.x() * rhs.x() +lhs.y() * rhs.y();
+		return lhs.x * rhs.x +lhs.y * rhs.y;
 	}
 
 	Vect operator*(const Vect& lhs, const double v) {
-		return Vect(lhs.x() * v, lhs.y() * v);
+		return Vect(lhs.x * v, lhs.y * v);
 	}
 
 	Vect operator/(const Vect& lhs, const double v) {
-		return Vect(lhs.x() / v, lhs.y() / v);
+		return Vect(lhs.x / v, lhs.y / v);
 	}
 
 	Vect operator*(const double v, const Vect& rhs) {
-		return Vect(rhs.x() * v, rhs.y() * v);
+		return Vect(rhs.x * v, rhs.y * v);
 	}
 
 	Vect operator/(const double v, const Vect& rhs) {
-		return Vect(rhs.x() / v, rhs.y() / v);
+		return Vect(rhs.x / v, rhs.y / v);
 	}
 
 	Vect operator-(const Vect& lhs, const Vect& rhs) {
-		return Vect(lhs.x() - rhs.x(), lhs.y() - rhs.y());
+		return Vect(lhs.x - rhs.x, lhs.y - rhs.y);
 	}
 
 	Vect operator+(const Vect& lhs, const Vect& rhs) {
-		return Vect(lhs.x() + rhs.x(), lhs.y() + rhs.y());
+		return Vect(lhs.x + rhs.x, lhs.y + rhs.y);
 	}
 
-	Vect::Vect() : vect(cpvzero) {}
+	Vect::Vect() : x(0), y(0) {}
 
-	Vect::Vect(Float x, Float y) : vect(cpv(x, y)) {}
+	Vect::Vect(Float x, Float y) : x(x), y(y) {}
 
-	Vect::Vect(const cpVect& vect) : vect(vect) {}
+	Vect::Vect(const cpVect& vect) : x(vect.x), y(vect.y) {}
 
 	Vect::operator cpVect() const {
-		return vect;
-	}
-
-	Float Vect::x() const {
-		return vect.x;
-	}
-
-	Float Vect::y() const {
-		return vect.y;
+		return cpv(x, y);
 	}
 
 	Vect& Vect::operator/=(const double v) {
-		vect.x /= v;
-		vect.y /= v;
+		x /= v;
+		y /= v;
 		return *this;
 	}
 
 	Vect& Vect::operator*=(const double v) {
-		vect.x *= v;
-		vect.y *= v;
+		x *= v;
+		y *= v;
 		return *this;
 	}
 
 	Vect& Vect::operator-=(const Vect& rhs) {
-		vect.x -= rhs.x();
-		vect.y -= rhs.y();
+		x -= rhs.x;
+		y -= rhs.y;
 		return *this;
 	}
 
 	Vect& Vect::operator-=(const double v) {
-		vect.x -= v;
-		vect.y -= v;
+		x -= v;
+		y -= v;
 		return *this;
 	}
 
 	Vect& Vect::operator+=(const double v) {
-		vect.x += v;
-		vect.y += v;
+		x += v;
+		y += v;
 		return *this;
 	}
 
 	Vect& Vect::operator+=(const Vect& rhs) {
-		vect.x += rhs.x();
-		vect.y += rhs.y();
+		x += rhs.x;
+		y += rhs.y;
 		return *this;
 	}
 
 	Vect& Vect::operator++() {
-		++vect.x;
-		++vect.y;
+		++x;
+		++y;
 		return *this;
 	}
 
 	Vect& Vect::operator--() {
-		--vect.x;
-		--vect.y;
+		--x;
+		--y;
 		return *this;
+	}
+
+	Float Vect::lengthSq() const {
+		return x*x+y*y;
+	}
+
+	Float Vect::length() const {
+		return sqrt(lengthSq());
+	}
+
+	Vect vlerp(Vect a, Vect b, Float t) {
+		return a*(1-t)+b*t;
+	}
+
+	Float vdist(Vect a, Vect b) {
+		return (a-b).length();
 	}
 }
 
 std::ostream& operator<<(std::ostream& out, const cp::Vect& vec)
 {
 	std::streamsize w = out.width(0);
-	out << "(" << std::setw(w) << vec.x() << ", " << std::setw(w) << vec.y() << ")";
+	out << "(" << std::setw(w) << vec.x << ", " << std::setw(w) << vec.y << ")";
 	return out;
 }

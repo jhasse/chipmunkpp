@@ -48,19 +48,33 @@ namespace cp {
 		cpSpaceStep(space, t);
 	}
 
-	void Space::segmentQueryFunc(cpShape* shape, cpFloat t, cpVect n, void* data) {
-		auto d = reinterpret_cast<SegmentQueryData*>(data);
-		auto it = std::find_if(d->shapes.begin(), d->shapes.end(),
+	std::shared_ptr<Shape> Space::findPtr(cpShape* shape) const {
+		auto it = std::find_if(shapes.begin(), shapes.end(),
 			[&shape](const std::shared_ptr<Shape>& s){
 				return *s == shape;
 			});
-		assert(it != d->shapes.end());
-		d->func(*it, t, n);
+		assert(it != shapes.end());
+		return *it;
+	}
+
+	void Space::segmentQueryFunc(cpShape* shape, cpFloat t, cpVect n, void* data) {
+		auto d = reinterpret_cast<SegmentQueryData*>(data);
+		d->func(d->self->findPtr(shape), t, n);
 	}
 
 	void Space::segmentQuery(Vect a, Vect b, Layers layers, Group group,
 	                         SegmentQueryFunc func) {
-		SegmentQueryData data = { shapes, func };
+		SegmentQueryData data = { this, func };
 		cpSpaceSegmentQuery(space, a, b, layers.get(), group.get(), segmentQueryFunc, &data);
+	}
+
+	std::shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group, SegmentQueryInfo* const info) {
+		cpSegmentQueryInfo i;
+		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, layers.get(), group.get(), &i);
+		if (info) {
+			info->t = i.t;
+			info->n = i.n;
+		}
+		return findPtr(rtn);
 	}
 }

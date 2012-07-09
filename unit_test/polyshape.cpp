@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE PolyShapeTest
+#define BOOST_TEST_MODULE ChipmunkppTest
 #include <boost/test/unit_test.hpp>
 #include <chipmunk.hpp>
 

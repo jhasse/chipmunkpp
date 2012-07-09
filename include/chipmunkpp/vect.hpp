@@ -11,8 +11,6 @@ namespace cp {
 		Vect(Float, Float);
 		Vect(const cpVect&);
 		operator cpVect() const;
-		Float x() const;
-		Float y() const;
 		Vect& operator/=(const double v);
 		Vect& operator*=(const double v);
 		Vect& operator-=(const Vect& rhs);
@@ -21,8 +19,11 @@ namespace cp {
 		Vect& operator+=(const Vect& rhs);
 		Vect& operator++();
 		Vect& operator--();
-	private:
-		cpVect vect;
+		Float length() const;
+		Float lengthSq() const;
+
+		Float x;
+		Float y;
 	};
 
 	bool operator==(const Vect& lhs, const Vect& rhs);
@@ -34,6 +35,9 @@ namespace cp {
 	double operator*(const Vect& lhs, const Vect& rhs);
 	Vect operator-(const Vect& lhs, const Vect& rhs);
 	Vect operator+(const Vect& lhs, const Vect& rhs);
+
+	Vect vlerp(Vect a, Vect b, Float t);
+	Float vdist(Vect a, Vect b);
 }
 
 std::ostream& operator<<(std::ostream&, const cp::Vect&);

@@ -23,17 +23,19 @@ namespace cp {
 		void setGravity(const Vect&);
 		void step(Float);
 		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc);
+		std::shared_ptr<Shape> segmentQueryFirst(Vect a, Vect b, Layers, Group, SegmentQueryInfo*);
 	private:
 		Space(const Space&);
 		const Space& operator=(const Space&);
 		static void segmentQueryFunc(cpShape*, cpFloat, cpVect, void*);
+		std::shared_ptr<Shape> findPtr(cpShape*) const;
 
 		cpSpace* space;
 		std::vector<std::shared_ptr<Shape>> shapes;
 		std::vector<std::shared_ptr<Body>> bodies;
 
 		struct SegmentQueryData {
-			const decltype(Space::shapes)& shapes;
+			Space* self;
 			SegmentQueryFunc& func;
 		};
 	public:
