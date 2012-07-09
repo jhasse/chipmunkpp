@@ -49,6 +49,9 @@ namespace cp {
 	}
 
 	std::shared_ptr<Shape> Space::findPtr(cpShape* shape) const {
+		if (!shape) {
+			return nullptr;
+		}
 		auto it = std::find_if(shapes.begin(), shapes.end(),
 			[&shape](const std::shared_ptr<Shape>& s){
 				return *s == shape;
