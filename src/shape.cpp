@@ -43,6 +43,10 @@ namespace cp {
 		cpShapeSetCollisionType(shape, t);
 	}
 
+	CollisionType Shape::getCollisionType() const {
+		return cpShapeGetCollisionType(shape);
+	}
+
 	void Shape::setLayers(Layers l) {
 		cpShapeSetLayers(shape, l.get());
 	}

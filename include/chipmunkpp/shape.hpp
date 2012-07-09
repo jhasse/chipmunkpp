@@ -23,6 +23,7 @@ namespace cp {
 		void setElasticity(Float);
 		void setGroup(Group);
 		void setCollisionType(CollisionType);
+		CollisionType getCollisionType() const;
 		void setLayers(Layers);
 		void setOwning(bool);
 		void setUserData(DataPointer);
