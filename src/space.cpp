@@ -63,12 +63,12 @@ namespace cp {
 	}
 
 	void Space::segmentQuery(Vect a, Vect b, Layers layers, Group group,
-	                         SegmentQueryFunc func) {
+	                         SegmentQueryFunc func) const {
 		SegmentQueryData data = { this, func };
 		cpSpaceSegmentQuery(space, a, b, layers.get(), group.get(), segmentQueryFunc, &data);
 	}
 
-	std::shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group, SegmentQueryInfo* const info) {
+	std::shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group, SegmentQueryInfo* const info) const {
 		cpSegmentQueryInfo i;
 		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, layers.get(), group.get(), &i);
 		if (info) {
@@ -76,5 +76,9 @@ namespace cp {
 			info->n = i.n;
 		}
 		return findPtr(rtn);
+	}
+
+	std::shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
+		return findPtr(cpSpacePointQueryFirst(space, p, layers.get(), group.get()));
 	}
 }

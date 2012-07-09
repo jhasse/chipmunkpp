@@ -22,8 +22,9 @@ namespace cp {
 		void remove(std::shared_ptr<Body>);
 		void setGravity(const Vect&);
 		void step(Float);
-		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc);
-		std::shared_ptr<Shape> segmentQueryFirst(Vect a, Vect b, Layers, Group, SegmentQueryInfo*);
+		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc) const;
+		std::shared_ptr<Shape> segmentQueryFirst(Vect a, Vect b, Layers, Group, SegmentQueryInfo* = nullptr) const;
+		std::shared_ptr<Shape> pointQueryFirst(Vect p, Layers, Group) const;
 	private:
 		Space(const Space&);
 		const Space& operator=(const Space&);
@@ -35,7 +36,7 @@ namespace cp {
 		std::vector<std::shared_ptr<Body>> bodies;
 
 		struct SegmentQueryData {
-			Space* self;
+			const Space* const self;
 			SegmentQueryFunc& func;
 		};
 	public:
