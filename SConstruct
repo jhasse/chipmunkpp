@@ -23,8 +23,8 @@ else:
 
 env.Append(CXXFLAGS="-std=c++0x",
            CFLAGS="-std=c99",
-           CPPPATH=Split("include chipmunk/include/chipmunk"))
-lib = env.Library(source=Glob("src/*.cpp"),
+           CPPPATH=Split("src chipmunk/include/chipmunk"))
+lib = env.Library(source=Glob("src/chipmunkpp/*.cpp"),
                   target="chipmunk++")
 env.Append(LIBPATH='chipmunk/src', LIBS=[lib, 'chipmunk'])
 env.Program(source="test.cpp")
