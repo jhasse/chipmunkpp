@@ -4,8 +4,10 @@
 #include <algorithm>
 #include <cassert>
 
+using namespace std;
+
 namespace cp {
-	Space::Space() : space(cpSpaceNew()), staticBody(std::make_shared<Body>(space->staticBody)) {
+	Space::Space() : space(cpSpaceNew()), staticBody(make_shared<Body>(space->staticBody)) {
 	}
 
 	Space::~Space() {
@@ -20,40 +22,40 @@ namespace cp {
 		return space;
 	}
 
-	void Space::add(std::shared_ptr<Shape> shape) {
+	void Space::add(shared_ptr<Shape> shape) {
 		cpSpaceAddShape(space, *shape);
 		shapes.push_back(shape);
 	}
 
-	void Space::remove(std::shared_ptr<Shape> shape) {
+	void Space::remove(shared_ptr<Shape> shape) {
 		cpSpaceRemoveShape(space, *shape);
-		shapes.erase(std::find(shapes.begin(), shapes.end(), shape));
+		shapes.erase(find(shapes.begin(), shapes.end(), shape));
 	}
 
 	void Space::setGravity(const Vect& vect) {
 		cpSpaceSetGravity(space, vect);
 	}
 
-	void Space::add(std::shared_ptr<Body> body) {
+	void Space::add(shared_ptr<Body> body) {
 		cpSpaceAddBody(space, *body);
 		bodies.push_back(body);
 	}
 
-	void Space::remove(std::shared_ptr<Body> body) {
+	void Space::remove(shared_ptr<Body> body) {
 		cpSpaceRemoveBody(space, *body);
-		bodies.erase(std::find(bodies.begin(), bodies.end(), body));
+		bodies.erase(find(bodies.begin(), bodies.end(), body));
 	}
 
 	void Space::step(Float t) {
 		cpSpaceStep(space, t);
 	}
 
-	std::shared_ptr<Shape> Space::findPtr(cpShape* shape) const {
+	shared_ptr<Shape> Space::findPtr(cpShape* shape) const {
 		if (!shape) {
 			return nullptr;
 		}
-		auto it = std::find_if(shapes.begin(), shapes.end(),
-			[&shape](const std::shared_ptr<Shape>& s){
+		auto it = find_if(shapes.begin(), shapes.end(),
+			[&shape](const shared_ptr<Shape>& s){
 				return *s == shape;
 			});
 		assert(it != shapes.end());
@@ -71,7 +73,8 @@ namespace cp {
 		cpSpaceSegmentQuery(space, a, b, layers.get(), group.get(), segmentQueryFunc, &data);
 	}
 
-	std::shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group, SegmentQueryInfo* const info) const {
+	shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group,
+	                                           SegmentQueryInfo* const info) const {
 		cpSegmentQueryInfo i;
 		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, layers.get(), group.get(), &i);
 		if (info) {
@@ -81,7 +84,7 @@ namespace cp {
 		return findPtr(rtn);
 	}
 
-	std::shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
+	shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
 		return findPtr(cpSpacePointQueryFirst(space, p, layers.get(), group.get()));
 	}
 }
