@@ -35,6 +35,8 @@ namespace cp {
 	double operator*(const Vect& lhs, const Vect& rhs);
 	Vect operator-(const Vect& lhs, const Vect& rhs);
 	Vect operator+(const Vect& lhs, const Vect& rhs);
+	bool operator<(const Vect& lhs, const Vect& rhs);
+	bool operator>(const Vect& lhs, const Vect& rhs);
 
 	Vect vlerp(Vect a, Vect b, Float t);
 	Float vdist(Vect a, Vect b);

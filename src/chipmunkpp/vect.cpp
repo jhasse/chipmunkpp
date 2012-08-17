@@ -40,6 +40,14 @@ namespace cp {
 		return Vect(lhs.x + rhs.x, lhs.y + rhs.y);
 	}
 
+	bool operator<(const Vect& lhs, const Vect& rhs) {
+		return lhs.x < rhs.x && lhs.y < rhs.y;
+	}
+
+	bool operator>(const Vect& lhs, const Vect& rhs) {
+		return lhs.x > rhs.x && lhs.y > rhs.y;
+	}
+
 	Vect::Vect() : x(0), y(0) {}
 
 	Vect::Vect(Float x, Float y) : x(x), y(y) {}
