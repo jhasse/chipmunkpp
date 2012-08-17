@@ -1,5 +1,5 @@
-#include "chipmunkpp/space.hpp"
-#include "chipmunkpp/body.hpp"
+#include "space.hpp"
+#include "body.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -52,7 +52,7 @@ namespace cp {
 
 	shared_ptr<Shape> Space::findPtr(cpShape* shape) const {
 		if (!shape) {
-			return nullptr;
+			return shared_ptr<Shape>((Shape*)0);
 		}
 		auto it = find_if(shapes.begin(), shapes.end(),
 			[&shape](const shared_ptr<Shape>& s){

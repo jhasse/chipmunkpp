@@ -1,5 +1,5 @@
-#include "chipmunkpp/shape.hpp"
-#include "chipmunkpp/body.hpp"
+#include "shape.hpp"
+#include "body.hpp"
 
 namespace cp {
 	Shape::Shape(cpShape* s, std::shared_ptr<Body> b) : body(b), shape(s) {

@@ -1,4 +1,4 @@
-#include "chipmunkpp/circleshape.hpp"
+#include "circleshape.hpp"
 
 namespace cp {
 	CircleShape::CircleShape(std::shared_ptr<Body> body, Float radius, Vect offset)

@@ -7,66 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9B6221C1572B59500AAC8A1 /* chipmunk.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622111572B59500AAC8A1 /* chipmunk.hpp */; };
-		C9B6221D1572B59500AAC8A1 /* chipmunk.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622111572B59500AAC8A1 /* chipmunk.hpp */; };
-		C9B6221E1572B59500AAC8A1 /* body.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622131572B59500AAC8A1 /* body.hpp */; };
-		C9B6221F1572B59500AAC8A1 /* body.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622131572B59500AAC8A1 /* body.hpp */; };
-		C9B622201572B59500AAC8A1 /* circleshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622141572B59500AAC8A1 /* circleshape.hpp */; };
-		C9B622211572B59500AAC8A1 /* circleshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622141572B59500AAC8A1 /* circleshape.hpp */; };
-		C9B622221572B59500AAC8A1 /* memory.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622151572B59500AAC8A1 /* memory.hpp */; };
-		C9B622231572B59500AAC8A1 /* memory.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622151572B59500AAC8A1 /* memory.hpp */; };
-		C9B622241572B59500AAC8A1 /* polyshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622161572B59500AAC8A1 /* polyshape.hpp */; };
-		C9B622251572B59500AAC8A1 /* polyshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622161572B59500AAC8A1 /* polyshape.hpp */; };
-		C9B622261572B59500AAC8A1 /* segmentshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622171572B59500AAC8A1 /* segmentshape.hpp */; };
-		C9B622271572B59500AAC8A1 /* segmentshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622171572B59500AAC8A1 /* segmentshape.hpp */; };
-		C9B622281572B59500AAC8A1 /* shape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622181572B59500AAC8A1 /* shape.hpp */; };
-		C9B622291572B59500AAC8A1 /* shape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622181572B59500AAC8A1 /* shape.hpp */; };
-		C9B6222A1572B59500AAC8A1 /* space.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622191572B59500AAC8A1 /* space.hpp */; };
-		C9B6222B1572B59500AAC8A1 /* space.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B622191572B59500AAC8A1 /* space.hpp */; };
-		C9B6222C1572B59500AAC8A1 /* types.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B6221A1572B59500AAC8A1 /* types.hpp */; };
-		C9B6222D1572B59500AAC8A1 /* types.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B6221A1572B59500AAC8A1 /* types.hpp */; };
-		C9B6222E1572B59500AAC8A1 /* vect.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B6221B1572B59500AAC8A1 /* vect.hpp */; };
-		C9B6222F1572B59500AAC8A1 /* vect.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C9B6221B1572B59500AAC8A1 /* vect.hpp */; };
+		C905002515DD9D7000E6683D /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001315DD9D7000E6683D /* body.cpp */; };
+		C905002615DD9D7000E6683D /* body.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001415DD9D7000E6683D /* body.hpp */; };
+		C905002715DD9D7000E6683D /* circleshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001515DD9D7000E6683D /* circleshape.cpp */; };
+		C905002815DD9D7000E6683D /* circleshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001615DD9D7000E6683D /* circleshape.hpp */; };
+		C905002915DD9D7000E6683D /* memory.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001715DD9D7000E6683D /* memory.hpp */; };
+		C905002A15DD9D7000E6683D /* polyshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001815DD9D7000E6683D /* polyshape.cpp */; };
+		C905002B15DD9D7000E6683D /* polyshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001915DD9D7000E6683D /* polyshape.hpp */; };
+		C905002C15DD9D7000E6683D /* segmentqueryinfo.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001A15DD9D7000E6683D /* segmentqueryinfo.hpp */; };
+		C905002D15DD9D7000E6683D /* segmentshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001B15DD9D7000E6683D /* segmentshape.cpp */; };
+		C905002E15DD9D7000E6683D /* segmentshape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001C15DD9D7000E6683D /* segmentshape.hpp */; };
+		C905002F15DD9D7000E6683D /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001D15DD9D7000E6683D /* shape.cpp */; };
+		C905003015DD9D7000E6683D /* shape.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905001E15DD9D7000E6683D /* shape.hpp */; };
+		C905003115DD9D7000E6683D /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001F15DD9D7000E6683D /* space.cpp */; };
+		C905003215DD9D7000E6683D /* space.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905002015DD9D7000E6683D /* space.hpp */; };
+		C905003315DD9D7000E6683D /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002115DD9D7000E6683D /* types.cpp */; };
+		C905003415DD9D7000E6683D /* types.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905002215DD9D7000E6683D /* types.hpp */; };
+		C905003515DD9D7000E6683D /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002315DD9D7000E6683D /* vect.cpp */; };
+		C905003615DD9D7000E6683D /* vect.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C905002415DD9D7000E6683D /* vect.hpp */; };
+		C905003715DD9DE100E6683D /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001315DD9D7000E6683D /* body.cpp */; };
+		C905003815DD9DE100E6683D /* circleshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001515DD9D7000E6683D /* circleshape.cpp */; };
+		C905003915DD9DE100E6683D /* polyshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001815DD9D7000E6683D /* polyshape.cpp */; };
+		C905003A15DD9DE100E6683D /* segmentshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001B15DD9D7000E6683D /* segmentshape.cpp */; };
+		C905003B15DD9DE100E6683D /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001D15DD9D7000E6683D /* shape.cpp */; };
+		C905003C15DD9DE100E6683D /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001F15DD9D7000E6683D /* space.cpp */; };
+		C905003D15DD9DE100E6683D /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002115DD9D7000E6683D /* types.cpp */; };
+		C905003E15DD9DE100E6683D /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002315DD9D7000E6683D /* vect.cpp */; };
 		C9BFC3CD152B62F200692B07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFC3CC152B62F200692B07 /* Cocoa.framework */; };
 		C9BFC3D7152B62F200692B07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9BFC3D5152B62F200692B07 /* InfoPlist.strings */; };
-		C9BFC3FD152B645700692B07 /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C51528D5D200779081 /* body.cpp */; };
 		C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C71528D5D200779081 /* chipmunk.cpp */; };
-		C9BFC3FF152B645700692B07 /* circleshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C91528D5D200779081 /* circleshape.cpp */; };
-		C9BFC400152B645700692B07 /* polyshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CB1528D5D200779081 /* polyshape.cpp */; };
-		C9BFC401152B645700692B07 /* segmentshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CD1528D5D200779081 /* segmentshape.cpp */; };
-		C9BFC402152B645700692B07 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CF1528D5D200779081 /* shape.cpp */; };
-		C9BFC403152B645700692B07 /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D11528D5D200779081 /* space.cpp */; };
-		C9BFC404152B645700692B07 /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D41528D5D200779081 /* vect.cpp */; };
 		C9C95B6B1529C2AB008EA579 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9C95B691529C2AB008EA579 /* InfoPlist.strings */; };
-		C9C95B8E1529C2E4008EA579 /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C51528D5D200779081 /* body.cpp */; };
 		C9C95B8F1529C2E4008EA579 /* chipmunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C71528D5D200779081 /* chipmunk.cpp */; };
-		C9C95B901529C2E4008EA579 /* circleshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C91528D5D200779081 /* circleshape.cpp */; };
-		C9C95B911529C2E4008EA579 /* polyshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CB1528D5D200779081 /* polyshape.cpp */; };
-		C9C95B921529C2E4008EA579 /* segmentshape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CD1528D5D200779081 /* segmentshape.cpp */; };
-		C9C95B931529C2E4008EA579 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5CF1528D5D200779081 /* shape.cpp */; };
-		C9C95B941529C2E4008EA579 /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D11528D5D200779081 /* space.cpp */; };
-		C9C95B951529C2E4008EA579 /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5D41528D5D200779081 /* vect.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C99DC5C51528D5D200779081 /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = body.cpp; sourceTree = "<group>"; };
+		C905001315DD9D7000E6683D /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = body.cpp; path = chipmunkpp/body.cpp; sourceTree = "<group>"; };
+		C905001415DD9D7000E6683D /* body.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = body.hpp; path = chipmunkpp/body.hpp; sourceTree = "<group>"; };
+		C905001515DD9D7000E6683D /* circleshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = circleshape.cpp; path = chipmunkpp/circleshape.cpp; sourceTree = "<group>"; };
+		C905001615DD9D7000E6683D /* circleshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = circleshape.hpp; path = chipmunkpp/circleshape.hpp; sourceTree = "<group>"; };
+		C905001715DD9D7000E6683D /* memory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = memory.hpp; path = chipmunkpp/memory.hpp; sourceTree = "<group>"; };
+		C905001815DD9D7000E6683D /* polyshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = polyshape.cpp; path = chipmunkpp/polyshape.cpp; sourceTree = "<group>"; };
+		C905001915DD9D7000E6683D /* polyshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = polyshape.hpp; path = chipmunkpp/polyshape.hpp; sourceTree = "<group>"; };
+		C905001A15DD9D7000E6683D /* segmentqueryinfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = segmentqueryinfo.hpp; path = chipmunkpp/segmentqueryinfo.hpp; sourceTree = "<group>"; };
+		C905001B15DD9D7000E6683D /* segmentshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = segmentshape.cpp; path = chipmunkpp/segmentshape.cpp; sourceTree = "<group>"; };
+		C905001C15DD9D7000E6683D /* segmentshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = segmentshape.hpp; path = chipmunkpp/segmentshape.hpp; sourceTree = "<group>"; };
+		C905001D15DD9D7000E6683D /* shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shape.cpp; path = chipmunkpp/shape.cpp; sourceTree = "<group>"; };
+		C905001E15DD9D7000E6683D /* shape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = shape.hpp; path = chipmunkpp/shape.hpp; sourceTree = "<group>"; };
+		C905001F15DD9D7000E6683D /* space.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = space.cpp; path = chipmunkpp/space.cpp; sourceTree = "<group>"; };
+		C905002015DD9D7000E6683D /* space.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = space.hpp; path = chipmunkpp/space.hpp; sourceTree = "<group>"; };
+		C905002115DD9D7000E6683D /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = chipmunkpp/types.cpp; sourceTree = "<group>"; };
+		C905002215DD9D7000E6683D /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = types.hpp; path = chipmunkpp/types.hpp; sourceTree = "<group>"; };
+		C905002315DD9D7000E6683D /* vect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vect.cpp; path = chipmunkpp/vect.cpp; sourceTree = "<group>"; };
+		C905002415DD9D7000E6683D /* vect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vect.hpp; path = chipmunkpp/vect.hpp; sourceTree = "<group>"; };
 		C99DC5C71528D5D200779081 /* chipmunk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chipmunk.cpp; sourceTree = "<group>"; };
-		C99DC5C91528D5D200779081 /* circleshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circleshape.cpp; sourceTree = "<group>"; };
-		C99DC5CB1528D5D200779081 /* polyshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polyshape.cpp; sourceTree = "<group>"; };
-		C99DC5CD1528D5D200779081 /* segmentshape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = segmentshape.cpp; sourceTree = "<group>"; };
-		C99DC5CF1528D5D200779081 /* shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shape.cpp; sourceTree = "<group>"; };
-		C99DC5D11528D5D200779081 /* space.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = space.cpp; sourceTree = "<group>"; };
-		C99DC5D41528D5D200779081 /* vect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vect.cpp; sourceTree = "<group>"; };
-		C9B622111572B59500AAC8A1 /* chipmunk.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = chipmunk.hpp; path = ../include/chipmunk.hpp; sourceTree = "<group>"; };
-		C9B622131572B59500AAC8A1 /* body.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = body.hpp; path = ../include/chipmunkpp/body.hpp; sourceTree = "<group>"; };
-		C9B622141572B59500AAC8A1 /* circleshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = circleshape.hpp; path = ../include/chipmunkpp/circleshape.hpp; sourceTree = "<group>"; };
-		C9B622151572B59500AAC8A1 /* memory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = memory.hpp; path = ../include/chipmunkpp/memory.hpp; sourceTree = "<group>"; };
-		C9B622161572B59500AAC8A1 /* polyshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = polyshape.hpp; path = ../include/chipmunkpp/polyshape.hpp; sourceTree = "<group>"; };
-		C9B622171572B59500AAC8A1 /* segmentshape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = segmentshape.hpp; path = ../include/chipmunkpp/segmentshape.hpp; sourceTree = "<group>"; };
-		C9B622181572B59500AAC8A1 /* shape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = shape.hpp; path = ../include/chipmunkpp/shape.hpp; sourceTree = "<group>"; };
-		C9B622191572B59500AAC8A1 /* space.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = space.hpp; path = ../include/chipmunkpp/space.hpp; sourceTree = "<group>"; };
-		C9B6221A1572B59500AAC8A1 /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = types.hpp; path = ../include/chipmunkpp/types.hpp; sourceTree = "<group>"; };
-		C9B6221B1572B59500AAC8A1 /* vect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vect.hpp; path = ../include/chipmunkpp/vect.hpp; sourceTree = "<group>"; };
 		C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "chipmunk++-mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BFC3CC152B62F200692B07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		C9BFC3CF152B62F200692B07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -81,7 +74,6 @@
 		C9C95B681529C2AB008EA579 /* chipmunk++-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chipmunk++-Info.plist"; sourceTree = "<group>"; };
 		C9C95B6A1529C2AB008EA579 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9C95B6C1529C2AB008EA579 /* chipmunk++-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chipmunk++-Prefix.pch"; sourceTree = "<group>"; };
-		C9E7DF93153C7B5800D0EB2F /* memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = memory.hpp; path = ../include/chipmunkpp/memory.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +95,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C905001215DD9D5300E6683D /* chipmunkpp */ = {
+			isa = PBXGroup;
+			children = (
+				C905001315DD9D7000E6683D /* body.cpp */,
+				C905001415DD9D7000E6683D /* body.hpp */,
+				C905001515DD9D7000E6683D /* circleshape.cpp */,
+				C905001615DD9D7000E6683D /* circleshape.hpp */,
+				C905001715DD9D7000E6683D /* memory.hpp */,
+				C905001815DD9D7000E6683D /* polyshape.cpp */,
+				C905001915DD9D7000E6683D /* polyshape.hpp */,
+				C905001A15DD9D7000E6683D /* segmentqueryinfo.hpp */,
+				C905001B15DD9D7000E6683D /* segmentshape.cpp */,
+				C905001C15DD9D7000E6683D /* segmentshape.hpp */,
+				C905001D15DD9D7000E6683D /* shape.cpp */,
+				C905001E15DD9D7000E6683D /* shape.hpp */,
+				C905001F15DD9D7000E6683D /* space.cpp */,
+				C905002015DD9D7000E6683D /* space.hpp */,
+				C905002115DD9D7000E6683D /* types.cpp */,
+				C905002215DD9D7000E6683D /* types.hpp */,
+				C905002315DD9D7000E6683D /* vect.cpp */,
+				C905002415DD9D7000E6683D /* vect.hpp */,
+			);
+			name = chipmunkpp;
+			sourceTree = "<group>";
+		};
 		C99DC53A1528D18000779081 = {
 			isa = PBXGroup;
 			children = (
-				C9E7DF93153C7B5800D0EB2F /* memory.hpp */,
 				C99DC5C41528D5D200779081 /* src */,
 				C9C95B661529C2AB008EA579 /* chipmunk++ */,
 				C9BFC3D2152B62F200692B07 /* chipmunk++-mac */,
@@ -127,24 +143,8 @@
 		C99DC5C41528D5D200779081 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				C99DC5C51528D5D200779081 /* body.cpp */,
-				C9B622131572B59500AAC8A1 /* body.hpp */,
+				C905001215DD9D5300E6683D /* chipmunkpp */,
 				C99DC5C71528D5D200779081 /* chipmunk.cpp */,
-				C9B622111572B59500AAC8A1 /* chipmunk.hpp */,
-				C99DC5C91528D5D200779081 /* circleshape.cpp */,
-				C9B622141572B59500AAC8A1 /* circleshape.hpp */,
-				C9B622151572B59500AAC8A1 /* memory.hpp */,
-				C99DC5CB1528D5D200779081 /* polyshape.cpp */,
-				C9B622161572B59500AAC8A1 /* polyshape.hpp */,
-				C99DC5CD1528D5D200779081 /* segmentshape.cpp */,
-				C9B622171572B59500AAC8A1 /* segmentshape.hpp */,
-				C99DC5CF1528D5D200779081 /* shape.cpp */,
-				C9B622181572B59500AAC8A1 /* shape.hpp */,
-				C99DC5D11528D5D200779081 /* space.cpp */,
-				C9B622191572B59500AAC8A1 /* space.hpp */,
-				C9B6221A1572B59500AAC8A1 /* types.hpp */,
-				C99DC5D41528D5D200779081 /* vect.cpp */,
-				C9B6221B1572B59500AAC8A1 /* vect.hpp */,
 			);
 			name = src;
 			path = ../src;
@@ -214,16 +214,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B6221D1572B59500AAC8A1 /* chipmunk.hpp in Headers */,
-				C9B6221F1572B59500AAC8A1 /* body.hpp in Headers */,
-				C9B622211572B59500AAC8A1 /* circleshape.hpp in Headers */,
-				C9B622231572B59500AAC8A1 /* memory.hpp in Headers */,
-				C9B622251572B59500AAC8A1 /* polyshape.hpp in Headers */,
-				C9B622271572B59500AAC8A1 /* segmentshape.hpp in Headers */,
-				C9B622291572B59500AAC8A1 /* shape.hpp in Headers */,
-				C9B6222B1572B59500AAC8A1 /* space.hpp in Headers */,
-				C9B6222D1572B59500AAC8A1 /* types.hpp in Headers */,
-				C9B6222F1572B59500AAC8A1 /* vect.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,16 +221,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B6221C1572B59500AAC8A1 /* chipmunk.hpp in Headers */,
-				C9B6221E1572B59500AAC8A1 /* body.hpp in Headers */,
-				C9B622201572B59500AAC8A1 /* circleshape.hpp in Headers */,
-				C9B622221572B59500AAC8A1 /* memory.hpp in Headers */,
-				C9B622241572B59500AAC8A1 /* polyshape.hpp in Headers */,
-				C9B622261572B59500AAC8A1 /* segmentshape.hpp in Headers */,
-				C9B622281572B59500AAC8A1 /* shape.hpp in Headers */,
-				C9B6222A1572B59500AAC8A1 /* space.hpp in Headers */,
-				C9B6222C1572B59500AAC8A1 /* types.hpp in Headers */,
-				C9B6222E1572B59500AAC8A1 /* vect.hpp in Headers */,
+				C905002615DD9D7000E6683D /* body.hpp in Headers */,
+				C905002815DD9D7000E6683D /* circleshape.hpp in Headers */,
+				C905002915DD9D7000E6683D /* memory.hpp in Headers */,
+				C905002B15DD9D7000E6683D /* polyshape.hpp in Headers */,
+				C905002C15DD9D7000E6683D /* segmentqueryinfo.hpp in Headers */,
+				C905002E15DD9D7000E6683D /* segmentshape.hpp in Headers */,
+				C905003015DD9D7000E6683D /* shape.hpp in Headers */,
+				C905003215DD9D7000E6683D /* space.hpp in Headers */,
+				C905003415DD9D7000E6683D /* types.hpp in Headers */,
+				C905003615DD9D7000E6683D /* vect.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +282,7 @@
 		C99DC53C1528D18100779081 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = C99DC53F1528D18100779081 /* Build configuration list for PBXProject "chipmunkpp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -378,14 +368,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9BFC3FD152B645700692B07 /* body.cpp in Sources */,
+				C905003715DD9DE100E6683D /* body.cpp in Sources */,
+				C905003815DD9DE100E6683D /* circleshape.cpp in Sources */,
+				C905003915DD9DE100E6683D /* polyshape.cpp in Sources */,
+				C905003A15DD9DE100E6683D /* segmentshape.cpp in Sources */,
+				C905003B15DD9DE100E6683D /* shape.cpp in Sources */,
+				C905003C15DD9DE100E6683D /* space.cpp in Sources */,
+				C905003D15DD9DE100E6683D /* types.cpp in Sources */,
+				C905003E15DD9DE100E6683D /* vect.cpp in Sources */,
 				C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */,
-				C9BFC3FF152B645700692B07 /* circleshape.cpp in Sources */,
-				C9BFC400152B645700692B07 /* polyshape.cpp in Sources */,
-				C9BFC401152B645700692B07 /* segmentshape.cpp in Sources */,
-				C9BFC402152B645700692B07 /* shape.cpp in Sources */,
-				C9BFC403152B645700692B07 /* space.cpp in Sources */,
-				C9BFC404152B645700692B07 /* vect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,14 +384,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C95B8E1529C2E4008EA579 /* body.cpp in Sources */,
 				C9C95B8F1529C2E4008EA579 /* chipmunk.cpp in Sources */,
-				C9C95B901529C2E4008EA579 /* circleshape.cpp in Sources */,
-				C9C95B911529C2E4008EA579 /* polyshape.cpp in Sources */,
-				C9C95B921529C2E4008EA579 /* segmentshape.cpp in Sources */,
-				C9C95B931529C2E4008EA579 /* shape.cpp in Sources */,
-				C9C95B941529C2E4008EA579 /* space.cpp in Sources */,
-				C9C95B951529C2E4008EA579 /* vect.cpp in Sources */,
+				C905002515DD9D7000E6683D /* body.cpp in Sources */,
+				C905002715DD9D7000E6683D /* circleshape.cpp in Sources */,
+				C905002A15DD9D7000E6683D /* polyshape.cpp in Sources */,
+				C905002D15DD9D7000E6683D /* segmentshape.cpp in Sources */,
+				C905002F15DD9D7000E6683D /* shape.cpp in Sources */,
+				C905003115DD9D7000E6683D /* space.cpp in Sources */,
+				C905003315DD9D7000E6683D /* types.cpp in Sources */,
+				C905003515DD9D7000E6683D /* vect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +478,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -511,6 +504,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

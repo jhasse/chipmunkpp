@@ -1,4 +1,4 @@
-#include "chipmunkpp/types.hpp"
+#include "types.hpp"
 
 namespace cp {
 	Group::Group(cpGroup g) : g(g) {

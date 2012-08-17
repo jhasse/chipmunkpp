@@ -1,4 +1,4 @@
-#include "chipmunkpp/vect.hpp"
+#include "vect.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -117,7 +117,7 @@ namespace cp {
 
 std::ostream& operator<<(std::ostream& out, const cp::Vect& vec)
 {
-	std::streamsize w = out.width(0);
+	int w = static_cast<int>(out.width(0));
 	out << "(" << std::setw(w) << vec.x << ", " << std::setw(w) << vec.y << ")";
 	return out;
 }

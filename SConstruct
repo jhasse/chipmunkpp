@@ -14,10 +14,10 @@ except NotImplementedError:
 	pass
 
 if env['PLATFORM'] == 'win32':
-	env = Environment(tools=['mingw'])
+	env = Environment(tools=['mingw'], variables = vars)
 
 if env['PLATFORM'] == 'darwin':
-	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++')
+	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++', variables = vars)
 
 if env['debug']:
 	env.Append(CCFLAGS = '-g -Wall')
