@@ -15,60 +15,60 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\body.cpp">
+    <ClCompile Include="..\src\chipmunkpp\body.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\circleshape.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\polyshape.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\segmentshape.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\shape.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\space.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\types.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\vect.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="..\src\chipmunk.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\circleshape.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\polyshape.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\segmentshape.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\shape.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\space.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\types.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vect.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\chipmunkpp\body.hpp">
+    <ClInclude Include="..\src\chipmunkpp\body.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\circleshape.hpp">
+    <ClInclude Include="..\src\chipmunkpp\circleshape.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\memory.hpp">
+    <ClInclude Include="..\src\chipmunkpp\memory.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\polyshape.hpp">
+    <ClInclude Include="..\src\chipmunkpp\polyshape.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\segmentshape.hpp">
+    <ClInclude Include="..\src\chipmunkpp\segmentshape.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\shape.hpp">
+    <ClInclude Include="..\src\chipmunkpp\shape.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\space.hpp">
+    <ClInclude Include="..\src\chipmunkpp\space.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\types.hpp">
+    <ClInclude Include="..\src\chipmunkpp\types.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\chipmunkpp\vect.hpp">
+    <ClInclude Include="..\src\chipmunkpp\vect.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

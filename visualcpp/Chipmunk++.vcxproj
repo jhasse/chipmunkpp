@@ -42,11 +42,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\include;..\chipmunk\include\chipmunk;$(IncludePath)</IncludePath>
+    <IncludePath>..\chipmunk\include\chipmunk;$(IncludePath)</IncludePath>
     <TargetName>$(ProjectName)-d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\include;..\chipmunk\include\chipmunk;$(IncludePath)</IncludePath>
+    <IncludePath>..\chipmunk\include\chipmunk;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -71,26 +71,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\body.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\body.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\circleshape.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\polyshape.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\segmentshape.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\shape.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\space.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\types.cpp" />
+    <ClCompile Include="..\src\chipmunkpp\vect.cpp" />
     <ClCompile Include="..\src\chipmunk.cpp" />
-    <ClCompile Include="..\src\circleshape.cpp" />
-    <ClCompile Include="..\src\polyshape.cpp" />
-    <ClCompile Include="..\src\segmentshape.cpp" />
-    <ClCompile Include="..\src\shape.cpp" />
-    <ClCompile Include="..\src\space.cpp" />
-    <ClCompile Include="..\src\types.cpp" />
-    <ClCompile Include="..\src\vect.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\chipmunkpp\body.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\circleshape.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\memory.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\polyshape.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\segmentshape.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\shape.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\space.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\types.hpp" />
-    <ClInclude Include="..\include\chipmunkpp\vect.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\body.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\circleshape.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\memory.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\polyshape.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\segmentshape.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\shape.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\space.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\types.hpp" />
+    <ClInclude Include="..\src\chipmunkpp\vect.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
