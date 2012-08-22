@@ -70,13 +70,13 @@ namespace cp {
 	void Space::segmentQuery(Vect a, Vect b, Layers layers, Group group,
 	                         SegmentQueryFunc func) const {
 		SegmentQueryData data = { this, func };
-		cpSpaceSegmentQuery(space, a, b, layers.get(), group.get(), segmentQueryFunc, &data);
+		cpSpaceSegmentQuery(space, a, b, static_cast<cpLayers>(layers), static_cast<cpGroup>(group), segmentQueryFunc, &data);
 	}
 
 	shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group,
 	                                           SegmentQueryInfo* const info) const {
 		cpSegmentQueryInfo i;
-		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, layers.get(), group.get(), &i);
+		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, static_cast<cpLayers>(layers), static_cast<cpGroup>(group), &i);
 		if (info) {
 			info->t = i.t;
 			info->n = i.n;
@@ -85,6 +85,6 @@ namespace cp {
 	}
 
 	shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
-		return findPtr(cpSpacePointQueryFirst(space, p, layers.get(), group.get()));
+		return findPtr(cpSpacePointQueryFirst(space, p, static_cast<cpLayers>(layers), static_cast<cpGroup>(group)));
 	}
 }

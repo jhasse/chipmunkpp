@@ -36,7 +36,7 @@ namespace cp {
 	}
 
 	void Shape::setGroup(Group g) {
-		cpShapeSetGroup(shape, g.get());
+		cpShapeSetGroup(shape, static_cast<cpGroup>(g));
 	}
 
 	void Shape::setCollisionType(CollisionType t) {
@@ -48,7 +48,7 @@ namespace cp {
 	}
 
 	void Shape::setLayers(Layers l) {
-		cpShapeSetLayers(shape, l.get());
+		cpShapeSetLayers(shape, static_cast<cpLayers>(l));
 	}
 
 	void Shape::setUserData(DataPointer p) {

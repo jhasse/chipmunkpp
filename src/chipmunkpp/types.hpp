@@ -9,17 +9,20 @@ namespace cp {
 
 	class Layers {
 	public:
-		Layers(cpLayers);
-		cpLayers get() const;
+		Layers(); // no layers
+		Layers(unsigned int layerNr); // one layer
+		Layers operator~() const;
+		Layers operator|(Layers rhs) const;
+		explicit operator cpLayers() const;
 	private:
 		cpLayers l;
 	};
-	const static Layers ALL_LAYERS(CP_ALL_LAYERS);
+	const static Layers ALL_LAYERS(~(Layers()));
 
 	class Group {
 	public:
 		Group(cpGroup);
-		cpGroup get() const;
+		explicit operator cpGroup() const;
 	private:
 		cpGroup g;
 	};
