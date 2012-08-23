@@ -13,7 +13,11 @@ namespace cp {
 		Layers(unsigned int layerNr); // one layer
 		Layers operator~() const;
 		Layers operator|(Layers rhs) const;
+#ifdef _MSC_VER
+		operator cpLayers() const;
+#else
 		explicit operator cpLayers() const;
+#endif
 	private:
 		cpLayers l;
 	};
@@ -22,7 +26,11 @@ namespace cp {
 	class Group {
 	public:
 		Group(cpGroup);
+#ifdef _MSC_VER
+		operator cpGroup() const;
+#else
 		explicit operator cpGroup() const;
+#endif
 	private:
 		cpGroup g;
 	};
