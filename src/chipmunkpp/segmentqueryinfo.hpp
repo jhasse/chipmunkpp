@@ -9,11 +9,11 @@ namespace cp {
 		Vect n;  // The normal of the surface hit.
 
 		inline Vect hitPoint(Vect start, Vect end) {
-			return vlerp(start, end, t);
+			return Vect::lerp(start, end, t);
 		}
 
 		inline Float hitDist(Vect start, Vect end) {
-			return vdist(start, end)*t;
+			return Vect::dist(start, end)*t;
 		}
 	};
 }
