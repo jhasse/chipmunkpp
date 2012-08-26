@@ -5,6 +5,7 @@
 #include <iosfwd>
 
 namespace cp {
+	/// 2D Vector class
 	class Vect {
 	public:
 		Vect();
@@ -19,8 +20,12 @@ namespace cp {
 		Vect& operator+=(const Vect& rhs);
 		Vect& operator++();
 		Vect& operator--();
+
+		/// Returns the length.
 		Float length() const;
-		Float lengthSq() const;
+
+		/// Returns the squared length. Faster than length() when you only need to compare lengths.
+		Float lengthSq() const; 
 
 		Float x;
 		Float y;
