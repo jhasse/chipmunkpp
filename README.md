@@ -12,7 +12,7 @@ folder called *chipmunk*. Run `cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF .` a
 
 To compile Chipmunk on Windows using MinGW:
 ```
-cmake -G "MinGW Makefiles" -D BUILD_DEMOS=OFF .
+cmake -G "MinGW Makefiles" -D BUILD_DEMOS=OFF BUILD_SHARED=OFF .
 mingw32-make
 ```
 
