@@ -27,6 +27,11 @@ namespace cp {
 		Vect getVel() const;
 		void setVel(Vect velocity);
 
+		/// Velocity limit of the body. Defaults to INFINITY unless you set it specifically. Can be used to limit
+		/// falling speeds, etc.
+		Float getVelLimit() const;
+		void setVelLimit(Float limit);
+
 		DataPointer getUserData() const;
 		void setUserData(DataPointer);
 	private:

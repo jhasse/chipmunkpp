@@ -33,6 +33,14 @@ namespace cp {
 		cpBodySetVel(body, velocity);
 	}
 
+	Float Body::getVelLimit() const {
+		return cpBodyGetVelLimit(body);
+	}
+
+	void Body::setVelLimit(Float limit) {
+		cpBodySetVelLimit(body, limit);
+	}
+
 	DataPointer Body::getUserData() const {
 		return cpBodyGetUserData(body);
 	}
