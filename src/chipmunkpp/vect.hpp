@@ -20,11 +20,11 @@ namespace cp {
 		/// Conversion operator to Chipmunk's cpVect.
 		operator cpVect() const;
 
-		Vect& operator/=(const double v);
-		Vect& operator*=(const double v);
+		Vect& operator/=(const Float v);
+		Vect& operator*=(const Float v);
 		Vect& operator-=(const Vect& rhs);
-		Vect& operator-=(const double v);
-		Vect& operator+=(const double v);
+		Vect& operator-=(const Float v);
+		Vect& operator+=(const Float v);
 		Vect& operator+=(const Vect& rhs);
 		Vect& operator++();
 		Vect& operator--();
@@ -104,11 +104,11 @@ namespace cp {
 
 	bool operator==(const Vect& lhs, const Vect& rhs);
 	bool operator!=(const Vect& lhs, const Vect& rhs);
-	Vect operator*(const Vect& lhs, const double v);
-	Vect operator/(const Vect& lhs, const double v);
-	Vect operator*(const double v, const Vect& rhs);
-	Vect operator/(const double v, const Vect& rhs);
-	double operator*(const Vect& lhs, const Vect& rhs);
+	Vect operator*(const Vect& lhs, const Float v);
+	Vect operator/(const Vect& lhs, const Float v);
+	Vect operator*(const Float v, const Vect& rhs);
+	Vect operator/(const Float v, const Vect& rhs);
+	Float operator*(const Vect& lhs, const Vect& rhs);
 	Vect operator-(const Vect& lhs, const Vect& rhs);
 	Vect operator+(const Vect& lhs, const Vect& rhs);
 	bool operator<(const Vect& lhs, const Vect& rhs);

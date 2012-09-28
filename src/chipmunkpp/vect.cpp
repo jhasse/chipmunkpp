@@ -12,23 +12,23 @@ namespace cp {
 		return lhs.x != rhs.x || lhs.y != rhs.y;
 	}
 
-	double operator*(const Vect& lhs, const Vect& rhs) {
+	Float operator*(const Vect& lhs, const Vect& rhs) {
 		return lhs.x * rhs.x +lhs.y * rhs.y;
 	}
 
-	Vect operator*(const Vect& lhs, const double v) {
+	Vect operator*(const Vect& lhs, const Float v) {
 		return Vect(lhs.x * v, lhs.y * v);
 	}
 
-	Vect operator/(const Vect& lhs, const double v) {
+	Vect operator/(const Vect& lhs, const Float v) {
 		return Vect(lhs.x / v, lhs.y / v);
 	}
 
-	Vect operator*(const double v, const Vect& rhs) {
+	Vect operator*(const Float v, const Vect& rhs) {
 		return Vect(rhs.x * v, rhs.y * v);
 	}
 
-	Vect operator/(const double v, const Vect& rhs) {
+	Vect operator/(const Float v, const Vect& rhs) {
 		return Vect(rhs.x / v, rhs.y / v);
 	}
 
@@ -58,13 +58,13 @@ namespace cp {
 		return cpv(x, y);
 	}
 
-	Vect& Vect::operator/=(const double v) {
+	Vect& Vect::operator/=(const Float v) {
 		x /= v;
 		y /= v;
 		return *this;
 	}
 
-	Vect& Vect::operator*=(const double v) {
+	Vect& Vect::operator*=(const Float v) {
 		x *= v;
 		y *= v;
 		return *this;
@@ -76,13 +76,13 @@ namespace cp {
 		return *this;
 	}
 
-	Vect& Vect::operator-=(const double v) {
+	Vect& Vect::operator-=(const Float v) {
 		x -= v;
 		y -= v;
 		return *this;
 	}
 
-	Vect& Vect::operator+=(const double v) {
+	Vect& Vect::operator+=(const Float v) {
 		x += v;
 		y += v;
 		return *this;
