@@ -4,6 +4,7 @@
 
 #include <iosfwd>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	/// 2D Vector class
 	class Vect {
@@ -116,3 +117,5 @@ namespace cp {
 }
 
 std::ostream& operator<<(std::ostream&, const cp::Vect&);
+
+#pragma GCC visibility pop

@@ -2,6 +2,7 @@
 
 #include "types.hpp"
 
+#pragma GCC visibility push(default)
 namespace cp {
 	struct SegmentQueryInfo {
 		SegmentQueryInfo() : t(0) {}
@@ -17,3 +18,4 @@ namespace cp {
 		}
 	};
 }
+#pragma GCC visibility pop

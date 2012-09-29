@@ -4,6 +4,7 @@
 
 #include <chipmunk.h>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	/**
 	 * \brief Rigid body
@@ -41,3 +42,4 @@ namespace cp {
 		bool freeBody;
 	};
 }
+#pragma GCC visibility pop

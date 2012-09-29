@@ -6,6 +6,7 @@
 
 #include <vector>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	typedef std::function<void(std::shared_ptr<Shape>, Float, Vect)> SegmentQueryFunc;
 
@@ -43,3 +44,4 @@ namespace cp {
 		std::shared_ptr<Body> staticBody;
 	};
 }
+#pragma GCC visibility pop

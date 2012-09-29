@@ -33,12 +33,27 @@
 		C905003C15DD9DE100E6683D /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001F15DD9D7000E6683D /* space.cpp */; };
 		C905003D15DD9DE100E6683D /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002115DD9D7000E6683D /* types.cpp */; };
 		C905003E15DD9DE100E6683D /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002315DD9D7000E6683D /* vect.cpp */; };
+		C97C9A2716174F620016CF62 /* chipmunk++-mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */; };
+		C97C9A2916174F7F0016CF62 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C97C9A2816174F7F0016CF62 /* test.cpp */; };
+		C97C9A2C16174FBB0016CF62 /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C97C9A2A16174F9D0016CF62 /* libchipmunk.a */; };
 		C9BFC3CD152B62F200692B07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFC3CC152B62F200692B07 /* Cocoa.framework */; };
 		C9BFC3D7152B62F200692B07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9BFC3D5152B62F200692B07 /* InfoPlist.strings */; };
 		C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C71528D5D200779081 /* chipmunk.cpp */; };
 		C9C95B6B1529C2AB008EA579 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9C95B691529C2AB008EA579 /* InfoPlist.strings */; };
 		C9C95B8F1529C2E4008EA579 /* chipmunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C99DC5C71528D5D200779081 /* chipmunk.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C97C9A1A16174F570016CF62 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C905001315DD9D7000E6683D /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = body.cpp; path = chipmunkpp/body.cpp; sourceTree = "<group>"; };
@@ -59,6 +74,9 @@
 		C905002215DD9D7000E6683D /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = types.hpp; path = chipmunkpp/types.hpp; sourceTree = "<group>"; };
 		C905002315DD9D7000E6683D /* vect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vect.cpp; path = chipmunkpp/vect.cpp; sourceTree = "<group>"; };
 		C905002415DD9D7000E6683D /* vect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vect.hpp; path = chipmunkpp/vect.hpp; sourceTree = "<group>"; };
+		C97C9A1C16174F570016CF62 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97C9A2816174F7F0016CF62 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test.cpp; sourceTree = "<group>"; };
+		C97C9A2A16174F9D0016CF62 /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = ../chipmunk/src/libchipmunk.a; sourceTree = "<group>"; };
 		C99DC5C71528D5D200779081 /* chipmunk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chipmunk.cpp; sourceTree = "<group>"; };
 		C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "chipmunk++-mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BFC3CC152B62F200692B07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -77,10 +95,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C97C9A1916174F570016CF62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97C9A2716174F620016CF62 /* chipmunk++-mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9BFC3C6152B62F200692B07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97C9A2C16174FBB0016CF62 /* libchipmunk.a in Frameworks */,
 				C9BFC3CD152B62F200692B07 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,12 +147,22 @@
 			name = chipmunkpp;
 			sourceTree = "<group>";
 		};
+		C97C9A1E16174F570016CF62 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C97C9A2816174F7F0016CF62 /* test.cpp */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		C99DC53A1528D18000779081 = {
 			isa = PBXGroup;
 			children = (
+				C97C9A2A16174F9D0016CF62 /* libchipmunk.a */,
 				C99DC5C41528D5D200779081 /* src */,
 				C9C95B661529C2AB008EA579 /* chipmunk++ */,
 				C9BFC3D2152B62F200692B07 /* chipmunk++-mac */,
+				C97C9A1E16174F570016CF62 /* Test */,
 				C9BFC3CB152B62F200692B07 /* Frameworks */,
 				C99DC5461528D18100779081 /* Products */,
 			);
@@ -136,6 +173,7 @@
 			children = (
 				C9C95B651529C2AB008EA579 /* chipmunk++.framework */,
 				C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */,
+				C97C9A1C16174F570016CF62 /* Test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,6 +275,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C97C9A1B16174F570016CF62 /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97C9A2516174F570016CF62 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				C97C9A1816174F570016CF62 /* Sources */,
+				C97C9A1916174F570016CF62 /* Frameworks */,
+				C97C9A1A16174F570016CF62 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Test;
+			productName = Test;
+			productReference = C97C9A1C16174F570016CF62 /* Test */;
+			productType = "com.apple.product-type.tool";
+		};
 		C9BFC3C9152B62F200692B07 /* chipmunk++-mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9BFC3DE152B62F200692B07 /* Build configuration list for PBXNativeTarget "chipmunk++-mac" */;
@@ -298,6 +353,7 @@
 			targets = (
 				C9C95B641529C2AB008EA579 /* chipmunk++ */,
 				C9BFC3C9152B62F200692B07 /* chipmunk++-mac */,
+				C97C9A1B16174F570016CF62 /* Test */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +420,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C97C9A1816174F570016CF62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97C9A2916174F7F0016CF62 /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9BFC3C5152B62F200692B07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +482,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C97C9A2316174F570016CF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../chipmunk/include/chipmunk,
+					../include,
+					../src,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../chipmunk/src\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C97C9A2416174F570016CF62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../chipmunk/include/chipmunk,
+					../include,
+					../src,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../chipmunk/src\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		C99DC5501528D18100779081 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,7 +550,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -458,6 +575,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -490,7 +608,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chipmunk++-mac/chipmunk++-mac-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../chipmunk/include/chipmunk,
+					../include,
+				);
 				INFOPLIST_FILE = "chipmunk++-mac/chipmunk++-mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../chipmunk/src\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,7 +643,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chipmunk++-mac/chipmunk++-mac-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = (
+					../chipmunk/include/chipmunk,
+					../include,
+				);
 				INFOPLIST_FILE = "chipmunk++-mac/chipmunk++-mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../chipmunk/src\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -591,6 +725,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C97C9A2516174F570016CF62 /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97C9A2316174F570016CF62 /* Debug */,
+				C97C9A2416174F570016CF62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C99DC53F1528D18100779081 /* Build configuration list for PBXProject "chipmunkpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

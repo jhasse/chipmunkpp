@@ -2,6 +2,7 @@
 
 #include <chipmunk.h>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	typedef cpFloat Float;
 	typedef cpCollisionType CollisionType;
@@ -36,3 +37,4 @@ namespace cp {
 	};
 	const static Group NO_GROUP(CP_NO_GROUP);
 }
+#pragma GCC visibility pop

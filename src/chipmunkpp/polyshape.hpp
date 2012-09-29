@@ -5,6 +5,7 @@
 
 #include <vector>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	class PolyShape : public Shape {
 	public:
@@ -13,3 +14,4 @@ namespace cp {
 		cp::Vect getVert(int);
 	};
 }
+#pragma GCC visibility pop

@@ -8,6 +8,7 @@
 #include <chipmunk.h>
 #include <functional>
 
+#pragma GCC visibility push(default)
 namespace cp {
 	class Body;
 	class Space;
@@ -41,3 +42,4 @@ namespace cp {
 		cpShape* shape;
 	};
 }
+#pragma GCC visibility pop
