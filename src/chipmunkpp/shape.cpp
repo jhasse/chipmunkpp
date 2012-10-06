@@ -60,7 +60,7 @@ namespace cp {
 	}
 
 	void Shape::setBody(std::shared_ptr<Body> b) {
-		cpShapeSetBody(shape, *b);
+		cpShapeSetBody(shape, b ? (*b) : (cpBody*)0);
 		body = b;
 	}
 }

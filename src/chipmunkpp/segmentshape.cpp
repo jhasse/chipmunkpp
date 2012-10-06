@@ -2,6 +2,6 @@
 
 namespace cp {
 	SegmentShape::SegmentShape(std::shared_ptr<Body> body, Vect a, Vect b, Float radius)
-		: Shape(cpSegmentShapeNew(*body, a, b, radius), body) {
+		: Shape(cpSegmentShapeNew(body ? (*body) : (cpBody*)0, a, b, radius), body) {
 	}
 }
