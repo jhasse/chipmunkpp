@@ -17,7 +17,8 @@ if env['PLATFORM'] == 'win32':
 	env = Environment(tools=['mingw'], variables = vars)
 
 if env['PLATFORM'] == 'darwin':
-	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++', variables = vars)
+	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++',
+	                  variables = vars, LIBPATH='../boost-libs/lib/mac')
 
 if env['debug']:
 	env.Append(CCFLAGS = '-g -Wall')
@@ -34,10 +35,12 @@ env.Append(CXXFLAGS="-std=c++0x",
            CPPPATH=Split("src chipmunk/include/chipmunk"))
 lib = env.Library(source=Glob("src/*.cpp") + Glob("src/chipmunkpp/*.cpp"),
                   target="chipmunk++")
-env.Append(LIBPATH='chipmunk/src', LIBS=[lib, 'chipmunk'])
+env.Append(LIBPATH=['chipmunk/src'], LIBS=[lib, 'chipmunk'])
 env.Program(source="test.cpp")
 
 if env['unit_test']:
 	env = env.Clone()
-	env.Append(LIBS=['boost_unit_test_framework'], CCFLAGS='-DBOOST_TEST_DYN_LINK')
+	env.Append(LIBS=['boost_unit_test_framework'], CPPPATH='../boost-libs/include')
+	if env['PLATFORM'] == 'posix':
+		env.Append(CCFLAGS='-DBOOST_TEST_DYN_LINK')
 	env.Program(target="unit_test/unit_test", source=Glob("unit_test/*.cpp"))
