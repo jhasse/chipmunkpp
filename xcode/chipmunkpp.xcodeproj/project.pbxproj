@@ -561,7 +561,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv7 i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -587,7 +587,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv7 i386 x86_64";
 			};
 			name = Release;
 		};
@@ -670,14 +670,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chipmunk++/chipmunk++-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+					"IOS=1",
 					"$(inherited)",
 					"CHIPMUNKPP_BOOST=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					../chipmunk/include/chipmunk,
 					../include,
-					/opt/local/include,
+					"../../boost-libs/include",
 				);
 				INFOPLIST_FILE = "chipmunk++/chipmunk++-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
@@ -702,13 +702,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chipmunk++/chipmunk++-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NDEBUG=1",
+					"$(inherited)",
 					"CHIPMUNKPP_BOOST=1",
+					"IOS=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					../chipmunk/include/chipmunk,
 					../include,
-					/opt/local/include,
+					"../../boost-libs/include",
 				);
 				INFOPLIST_FILE = "chipmunk++/chipmunk++-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
@@ -732,6 +733,7 @@
 				C97C9A2416174F570016CF62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C99DC53F1528D18100779081 /* Build configuration list for PBXProject "chipmunkpp" */ = {
 			isa = XCConfigurationList;
