@@ -33,6 +33,10 @@
 		C905003C15DD9DE100E6683D /* space.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905001F15DD9D7000E6683D /* space.cpp */; };
 		C905003D15DD9DE100E6683D /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002115DD9D7000E6683D /* types.cpp */; };
 		C905003E15DD9DE100E6683D /* vect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C905002315DD9D7000E6683D /* vect.cpp */; };
+		C906FEAC16235BDF0094E097 /* bb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C906FEAA16235BDF0094E097 /* bb.cpp */; };
+		C906FEAD16235BDF0094E097 /* bb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C906FEAA16235BDF0094E097 /* bb.cpp */; };
+		C906FEAE16235BDF0094E097 /* bb.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C906FEAB16235BDF0094E097 /* bb.hpp */; };
+		C906FEAF16235BDF0094E097 /* bb.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C906FEAB16235BDF0094E097 /* bb.hpp */; };
 		C97C9A2716174F620016CF62 /* chipmunk++-mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFC3CA152B62F200692B07 /* chipmunk++-mac.framework */; };
 		C97C9A2916174F7F0016CF62 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C97C9A2816174F7F0016CF62 /* test.cpp */; };
 		C97C9A2C16174FBB0016CF62 /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C97C9A2A16174F9D0016CF62 /* libchipmunk.a */; };
@@ -74,6 +78,8 @@
 		C905002215DD9D7000E6683D /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = types.hpp; path = chipmunkpp/types.hpp; sourceTree = "<group>"; };
 		C905002315DD9D7000E6683D /* vect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vect.cpp; path = chipmunkpp/vect.cpp; sourceTree = "<group>"; };
 		C905002415DD9D7000E6683D /* vect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vect.hpp; path = chipmunkpp/vect.hpp; sourceTree = "<group>"; };
+		C906FEAA16235BDF0094E097 /* bb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bb.cpp; path = chipmunkpp/bb.cpp; sourceTree = "<group>"; };
+		C906FEAB16235BDF0094E097 /* bb.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = bb.hpp; path = chipmunkpp/bb.hpp; sourceTree = "<group>"; };
 		C97C9A1C16174F570016CF62 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97C9A2816174F7F0016CF62 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test.cpp; sourceTree = "<group>"; };
 		C97C9A2A16174F9D0016CF62 /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = ../chipmunk/src/libchipmunk.a; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 		C905001215DD9D5300E6683D /* chipmunkpp */ = {
 			isa = PBXGroup;
 			children = (
+				C906FEAA16235BDF0094E097 /* bb.cpp */,
+				C906FEAB16235BDF0094E097 /* bb.hpp */,
 				C905001315DD9D7000E6683D /* body.cpp */,
 				C905001415DD9D7000E6683D /* body.hpp */,
 				C905001515DD9D7000E6683D /* circleshape.cpp */,
@@ -252,6 +260,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C906FEAF16235BDF0094E097 /* bb.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +278,7 @@
 				C905003215DD9D7000E6683D /* space.hpp in Headers */,
 				C905003415DD9D7000E6683D /* types.hpp in Headers */,
 				C905003615DD9D7000E6683D /* vect.hpp in Headers */,
+				C906FEAE16235BDF0094E097 /* bb.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +451,7 @@
 				C905003D15DD9DE100E6683D /* types.cpp in Sources */,
 				C905003E15DD9DE100E6683D /* vect.cpp in Sources */,
 				C9BFC3FE152B645700692B07 /* chipmunk.cpp in Sources */,
+				C906FEAD16235BDF0094E097 /* bb.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +468,7 @@
 				C905003115DD9D7000E6683D /* space.cpp in Sources */,
 				C905003315DD9D7000E6683D /* types.cpp in Sources */,
 				C905003515DD9D7000E6683D /* vect.cpp in Sources */,
+				C906FEAC16235BDF0094E097 /* bb.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

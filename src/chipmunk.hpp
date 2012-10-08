@@ -8,6 +8,7 @@
 #include "chipmunkpp/types.hpp"
 #include "chipmunkpp/circleshape.hpp"
 #include "chipmunkpp/polyshape.hpp"
+#include "chipmunkpp/bb.hpp"
 
 #pragma GCC visibility push(default)
 namespace cp {
