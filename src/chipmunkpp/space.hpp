@@ -21,7 +21,12 @@ namespace cp {
 		void add(std::shared_ptr<Body>);
 		void remove(std::shared_ptr<Shape>);
 		void remove(std::shared_ptr<Body>);
+
+		/// Global gravity applied to the space. Defaults to cp::Vect(0, 0). Can be overridden on a per body basis by
+		/// writing custom integration functions.
+		Vect getGravity() const;
 		void setGravity(const Vect&);
+
 		void step(Float);
 		void segmentQuery(Vect a, Vect b, Layers, Group, SegmentQueryFunc) const;
 		std::shared_ptr<Shape> segmentQueryFirst(Vect a, Vect b, Layers, Group, SegmentQueryInfo* = nullptr) const;

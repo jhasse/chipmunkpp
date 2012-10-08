@@ -32,6 +32,10 @@ namespace cp {
 		shapes.erase(find(shapes.begin(), shapes.end(), shape));
 	}
 
+	Vect Space::getGravity() const {
+		return cpSpaceGetGravity(space);
+	}
+
 	void Space::setGravity(const Vect& vect) {
 		cpSpaceSetGravity(space, vect);
 	}
