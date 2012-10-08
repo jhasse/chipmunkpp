@@ -8,7 +8,7 @@ namespace cp {
 		          p.y + r};
 	}
 
-	bool BB::contains(Vect v) {
+	bool BB::contains(Vect v) const {
 		return (l <= v.x && r >= v.x && b <= v.y && t >= v.y);
 	}
 }

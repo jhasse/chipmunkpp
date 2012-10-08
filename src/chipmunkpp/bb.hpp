@@ -20,7 +20,7 @@ namespace cp {
 		static BB forCircle(Vect p, Float r);
 
 		/// Returns true if bb contains v.
-		bool contains(Vect v);
+		bool contains(Vect v) const;
 	};
 }
 #pragma GCC visibility pop
