@@ -13,6 +13,7 @@ namespace cp {
 	class Body;
 	class Space;
 
+	/// Opaque collision shape
 	class Shape {
 		friend class Space;
 	public:

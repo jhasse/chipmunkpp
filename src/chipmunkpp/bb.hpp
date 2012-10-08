@@ -4,6 +4,7 @@
 
 #pragma GCC visibility push(default)
 namespace cp {
+	/// Axis-aligned 2D bounding box type
 	class BB {
 	public:
 		/// left

@@ -4,6 +4,7 @@
 
 #pragma GCC visibility push(default)
 namespace cp {
+	/// Segment query info struct
 	struct SegmentQueryInfo {
 		SegmentQueryInfo() : t(0) {}
 		Float t; // The normalized distance along the query segment in the range [0, 1].

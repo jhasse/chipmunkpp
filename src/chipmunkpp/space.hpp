@@ -12,6 +12,7 @@ namespace cp {
 
 	class Body;
 
+	/// Basic unit of simulation
 	class Space {
 	public:
 		Space();
