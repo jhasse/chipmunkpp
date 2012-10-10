@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['polyshape',['PolyShape',['../classcp_1_1PolyShape.html',1,'cp']]]
+  ['perp',['perp',['../classcp_1_1Vect.html#a9afa86fa0fd0beddf38f5720cc283bb6',1,'cp::Vect']]],
+  ['polyshape',['PolyShape',['../classcp_1_1PolyShape.html',1,'cp']]],
+  ['project',['project',['../classcp_1_1Vect.html#a0eaf95b689ec340b6dbb93ed24460f42',1,'cp::Vect']]]
 ];
