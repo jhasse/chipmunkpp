@@ -7,3 +7,4 @@ doc/html/*
 test
 *.exe
 libchipmunk++.a
+chipmunk
