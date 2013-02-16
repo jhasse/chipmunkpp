@@ -5,7 +5,9 @@
 
 #include <vector>
 
+#ifndef _MSC_VER
 #pragma GCC visibility push(default)
+#endif
 namespace cp {
 	/// Convex polygon shape
 	class PolyShape : public Shape {
@@ -15,4 +17,6 @@ namespace cp {
 		cp::Vect getVert(int);
 	};
 }
+#ifndef _MSC_VER
 #pragma GCC visibility pop
+#endif

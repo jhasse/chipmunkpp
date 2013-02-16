@@ -10,9 +10,13 @@
 #include "chipmunkpp/polyshape.hpp"
 #include "chipmunkpp/bb.hpp"
 
+#ifndef _MSC_VER
 #pragma GCC visibility push(default)
+#endif
 namespace cp {
 	Float momentForCircle(Float m, Float r1, Float r2, Vect offset = Vect(0, 0));
 	Float areaForPoly(const std::vector<cp::Vect>&);
 }
+#ifndef _MSC_VER
 #pragma GCC visibility pop
+#endif
