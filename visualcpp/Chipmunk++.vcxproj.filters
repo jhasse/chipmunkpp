@@ -42,6 +42,9 @@
     <ClCompile Include="..\src\chipmunk.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\chipmunkpp\bb.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\chipmunkpp\body.hpp">
