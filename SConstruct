@@ -20,6 +20,9 @@ if env['PLATFORM'] == 'darwin':
 	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++',
 	                  variables = vars, LIBPATH='../boost-libs/lib/mac')
 
+if env['PLATFORM'] == 'posix':
+	env.Append(CPPPATH='/usr/include/chipmunk')
+
 if env['debug']:
 	env.Append(CCFLAGS = '-g -Wall')
 else:
