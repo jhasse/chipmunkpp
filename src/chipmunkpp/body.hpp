@@ -20,6 +20,7 @@ namespace cp {
 	class Body {
 	public:
 		Body(Float mass, Float inertia);
+		Body(Body&&);
 		explicit Body(cpBody*);
 		~Body();
 		operator cpBody*() const;
@@ -41,7 +42,7 @@ namespace cp {
 		Body(const Body&);
 		const Body& operator=(const Body&);
 		cpBody* body;
-		bool freeBody;
+		bool owning;
 	};
 }
 #ifndef _MSC_VER

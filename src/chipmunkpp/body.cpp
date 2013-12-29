@@ -1,16 +1,21 @@
 #include "body.hpp"
 
 namespace cp {
-	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), freeBody(true) {
+	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), owning(true) {
+	}
+
+	Body::Body(Body&& other) : body(other.body), owning(other.owning) {
+		other.body = nullptr;
+		other.owning = false;
 	}
 
 	Body::~Body() {
-		if (freeBody) {
+		if (owning) {
 			cpBodyFree(body);
 		}
 	}
 
-	Body::Body(cpBody* body) : body(body), freeBody(false) {
+	Body::Body(cpBody* body) : body(body), owning(false) {
 	}
 
 	Body::operator cpBody*() const {
