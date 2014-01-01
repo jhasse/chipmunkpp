@@ -8,3 +8,4 @@ test
 *.exe
 libchipmunk++.a
 chipmunk
+unit_test/unit_test*
