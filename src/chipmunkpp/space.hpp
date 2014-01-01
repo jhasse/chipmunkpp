@@ -39,23 +39,31 @@ namespace cp {
 
 		template<class T>
 		void addCollisionHandler(CollisionType a, CollisionType b,
-		                                std::function<int(Arbiter&, Space&, T)> begin,
-		                                std::function<int(Arbiter&, Space&, T)> preSolve,
-		                                std::function<void(Arbiter&, Space&, T)> postSolve,
-		                                std::function<void(Arbiter&, Space&, T)> separate,
-		                                T data) {
+		                         std::function<int(Arbiter, Space&, T)> begin,
+		                         std::function<int(Arbiter, Space&, T)> preSolve,
+		                         std::function<void(Arbiter, Space&, T)> postSolve,
+		                         std::function<void(Arbiter, Space&, T)> separate,
+		                         T data) {
 			cpSpaceAddCollisionHandler(space, a, b,
-			                           [begin](cpArbiter* arb, cpSpace* s, void* d) -> int {
-				return begin(arb, arb, Space(s), reinterpret_cast<T>(d));
+			                           [begin, this](cpArbiter* arb, cpSpace* s, void* d) -> int {
+				if (begin) {
+					return begin(arb, *this, reinterpret_cast<T>(d));
+				}
 			},
-			                           [preSolve](cpArbiter* arb, cpSpace* s, void* d) -> int {
-				return preSolve(arb, arb, Space(s), reinterpret_cast<T>(d));
+			                           [preSolve, this](cpArbiter* arb, cpSpace* s, void* d) -> int {
+				if (preSolve) {
+					return preSolve(arb, *this, reinterpret_cast<T>(d));
+				}
 			},
-			                           [postSolve](cpArbiter* arb, cpSpace* s, void* d) {
-				return postSolve(arb, arb, Space(s), reinterpret_cast<T>(d));
+			                           [postSolve, this](cpArbiter* arb, cpSpace* s, void* d) {
+				if (postSolve) {
+					return postSolve(arb, *this, reinterpret_cast<T>(d));
+				}
 			},
-			                           [separate](cpArbiter* arb, cpSpace* s, void* d) {
-				return separate(arb, arb, Space(s), reinterpret_cast<T>(d));
+			                           [separate, this](cpArbiter* arb, cpSpace* s, void* d) {
+				if (separate) {
+					return separate(arb, *this, reinterpret_cast<T>(d));
+				}
 			}, reinterpret_cast<void*>(data));
 		}
 	private:

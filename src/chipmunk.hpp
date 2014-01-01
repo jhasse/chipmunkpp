@@ -9,6 +9,7 @@
 #include "chipmunkpp/circleshape.hpp"
 #include "chipmunkpp/polyshape.hpp"
 #include "chipmunkpp/bb.hpp"
+#include "chipmunkpp/arbiter.hpp"
 
 #ifndef _MSC_VER
 #pragma GCC visibility push(default)
