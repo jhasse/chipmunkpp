@@ -9,3 +9,9 @@ test
 libchipmunk++.a
 chipmunk
 unit_test/unit_test*
+*.sdf
+*.suo
+visualcpp/Debug/
+visualcpp/Release/
+*.sublime-workspace
+.gitattributes
