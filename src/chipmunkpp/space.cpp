@@ -1,5 +1,6 @@
 #include "space.hpp"
 #include "body.hpp"
+#include "arbiter.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -90,5 +91,39 @@ namespace cp {
 
 	shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
 		return findPtr(cpSpacePointQueryFirst(space, p, static_cast<cpLayers>(layers), static_cast<cpGroup>(group)));
+	}
+
+	int Space::helperBegin(cpArbiter* arb, cpSpace* s, void* d) {
+		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
+		return data.begin(arb, data.self);
+	}
+
+	int Space::helperPreSolve(cpArbiter* arb, cpSpace* s, void* d) {
+		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
+		return data.preSolve(arb, data.self);
+	}
+
+	void Space::helperPostSolve(cpArbiter* arb, cpSpace* s, void* d) {
+		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
+		return data.postSolve(arb, data.self);
+	}
+
+	void Space::helperSeparate(cpArbiter* arb, cpSpace* s, void* d) {
+		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
+		return data.separate(arb, data.self);
+	}
+
+	void Space::addCollisionHandler(CollisionType a, CollisionType b,
+	                                std::function<int(Arbiter, Space&)> begin,
+	                                std::function<int(Arbiter, Space&)> preSolve,
+	                                std::function<void(Arbiter, Space&)> postSolve,
+	                                std::function<void(Arbiter, Space&)> separate) {
+		callbackDatas.emplace_back(new CallbackData(begin, preSolve, postSolve, separate, *this));
+		cpSpaceAddCollisionHandler(space, a, b,
+		                           begin == nullptr ? nullptr : helperBegin,
+		                           preSolve == nullptr ? nullptr : helperPreSolve,
+		                           postSolve == nullptr ? nullptr : helperPostSolve,
+		                           separate == nullptr ? nullptr : helperSeparate,
+		                           reinterpret_cast<CallbackData*>(callbackDatas.back().get()));
 	}
 }

@@ -71,6 +71,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\chipmunkpp\arbiter.cpp" />
     <ClCompile Include="..\src\chipmunkpp\bb.cpp" />
     <ClCompile Include="..\src\chipmunkpp\body.cpp" />
     <ClCompile Include="..\src\chipmunkpp\circleshape.cpp" />

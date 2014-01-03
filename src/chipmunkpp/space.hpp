@@ -37,35 +37,11 @@ namespace cp {
 		std::shared_ptr<Shape> segmentQueryFirst(Vect a, Vect b, Layers, Group, SegmentQueryInfo* = nullptr) const;
 		std::shared_ptr<Shape> pointQueryFirst(Vect p, Layers, Group) const;
 
-		template<class T>
 		void addCollisionHandler(CollisionType a, CollisionType b,
-		                         std::function<int(Arbiter, Space&, T)> begin,
-		                         std::function<int(Arbiter, Space&, T)> preSolve,
-		                         std::function<void(Arbiter, Space&, T)> postSolve,
-		                         std::function<void(Arbiter, Space&, T)> separate,
-		                         T data) {
-			cpSpaceAddCollisionHandler(space, a, b,
-			                           [begin, this](cpArbiter* arb, cpSpace* s, void* d) -> int {
-				if (begin) {
-					return begin(arb, *this, reinterpret_cast<T>(d));
-				}
-			},
-			                           [preSolve, this](cpArbiter* arb, cpSpace* s, void* d) -> int {
-				if (preSolve) {
-					return preSolve(arb, *this, reinterpret_cast<T>(d));
-				}
-			},
-			                           [postSolve, this](cpArbiter* arb, cpSpace* s, void* d) {
-				if (postSolve) {
-					return postSolve(arb, *this, reinterpret_cast<T>(d));
-				}
-			},
-			                           [separate, this](cpArbiter* arb, cpSpace* s, void* d) {
-				if (separate) {
-					return separate(arb, *this, reinterpret_cast<T>(d));
-				}
-			}, reinterpret_cast<void*>(data));
-		}
+		                         std::function<int(Arbiter, Space&)> begin,
+		                         std::function<int(Arbiter, Space&)> preSolve,
+		                         std::function<void(Arbiter, Space&)> postSolve,
+		                         std::function<void(Arbiter, Space&)> separate);
 	private:
 		Space(const Space&);
 		const Space& operator=(const Space&);
@@ -80,6 +56,27 @@ namespace cp {
 			const Space* const self;
 			SegmentQueryFunc& func;
 		};
+
+		struct CallbackData {
+			std::function<int(Arbiter, Space&)> begin;
+			std::function<int(Arbiter, Space&)> preSolve;
+			std::function<void(Arbiter, Space&)> postSolve;
+			std::function<void(Arbiter, Space&)> separate;
+			Space& self;
+
+			CallbackData(std::function<int(Arbiter, Space&)> begin, std::function<int(Arbiter, Space&)> preSolve,
+			             std::function<void(Arbiter, Space&)> postSolve, std::function<void(Arbiter, Space&)> separate,
+			             Space& self)
+			: begin(begin), preSolve(preSolve), postSolve(postSolve), separate(separate), self(self) {
+			}
+		};
+
+		std::vector<std::unique_ptr<CallbackData>> callbackDatas;
+
+		static int helperBegin(cpArbiter* arb, cpSpace* s, void* d);
+		static int helperPreSolve(cpArbiter* arb, cpSpace* s, void* d);
+		static void helperPostSolve(cpArbiter* arb, cpSpace* s, void* d);
+		static void helperSeparate(cpArbiter* arb, cpSpace* s, void* d);
 	public:
 		std::shared_ptr<Body> staticBody;
 	};
