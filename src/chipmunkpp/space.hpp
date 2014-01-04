@@ -5,6 +5,7 @@
 #include "memory.hpp"
 
 #include <vector>
+#include <map>
 
 #ifndef _MSC_VER
 #pragma GCC visibility push(default)
@@ -71,7 +72,7 @@ namespace cp {
 			}
 		};
 
-		std::vector<std::unique_ptr<CallbackData>> callbackDatas;
+		std::map<std::pair<CollisionType, CollisionType>, std::unique_ptr<CallbackData>> callbackDatas;
 
 		static int helperBegin(cpArbiter* arb, cpSpace* s, void* d);
 		static int helperPreSolve(cpArbiter* arb, cpSpace* s, void* d);

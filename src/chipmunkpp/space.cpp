@@ -118,12 +118,14 @@ namespace cp {
 	                                std::function<int(Arbiter, Space&)> preSolve,
 	                                std::function<void(Arbiter, Space&)> postSolve,
 	                                std::function<void(Arbiter, Space&)> separate) {
-		callbackDatas.emplace_back(new CallbackData(begin, preSolve, postSolve, separate, *this));
+		auto data = new CallbackData(begin, preSolve, postSolve, separate, *this);
+		callbackDatas[std::make_pair(a, b)] = std::unique_ptr<CallbackData>(data);
 		cpSpaceAddCollisionHandler(space, a, b,
 		                           begin == nullptr ? nullptr : helperBegin,
 		                           preSolve == nullptr ? nullptr : helperPreSolve,
 		                           postSolve == nullptr ? nullptr : helperPostSolve,
 		                           separate == nullptr ? nullptr : helperSeparate,
-		                           reinterpret_cast<CallbackData*>(callbackDatas.back().get()));
+		                           reinterpret_cast<CallbackData*>(data));
 	}
+
 }
