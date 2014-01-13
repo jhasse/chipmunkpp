@@ -125,7 +125,7 @@ namespace cp {
 		                           preSolve == nullptr ? nullptr : helperPreSolve,
 		                           postSolve == nullptr ? nullptr : helperPostSolve,
 		                           separate == nullptr ? nullptr : helperSeparate,
-		                           reinterpret_cast<CallbackData*>(data));
+		                           data);
 	}
 
 }
