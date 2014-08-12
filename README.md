@@ -15,10 +15,10 @@ Extract the [latest version of Chipmunk](http://chipmunk-physics.net/release/Chi
 *chipmunk*. Run `cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .` and `make` inside that
 folder.
 
-To compile Chipmunk on Windows using MinGW:
+To compile Chipmunk on Windows using [MSYS2](http://msys2.sourceforge.net/):
 ```
-cmake -G "MinGW Makefiles" -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .
-mingw32-make
+cmake -G "MSYS Makefiles" -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .
+make
 ```
 
 Run [scons](http://scons.org/) in Chipmunk++'s folder.

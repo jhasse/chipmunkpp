@@ -43,11 +43,9 @@ env.Program(source="test.cpp")
 
 if env['unit_test']:
 	env = env.Clone()
+	env.Append(CPPDEFINES = 'BOOST_TEST_DYN_LINK')
 	if env['PLATFORM'] == 'posix':
-		env.Append(LIBS=['boost_unit_test_framework'],
-		           CCFLAGS='-DBOOST_TEST_DYN_LINK')
-	if env['PLATFORM'] == 'win32':
-		env.Append(LIBS=['boost_unit_test_framework-mgw47-mt-1_51'],
-		           CPPPATH='../boost-libs/include',
-		           LIBPATH='../boost-libs/lib/win')
+		env.Append(LIBS=['boost_unit_test_framework'])
+	if env['PLATFORM'] in ['win32', 'msys']:
+		env.Append(LIBS=['boost_unit_test_framework-mt'])
 	env.Program(target="unit_test/unit_test", source=Glob("unit_test/*.cpp"))
