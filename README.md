@@ -17,6 +17,7 @@ folder.
 
 To compile Chipmunk on Windows using [MSYS2](http://msys2.sourceforge.net/):
 ```
+pacman -S make mingw-w64-x86_64-cmake
 cmake -G "MSYS Makefiles" -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .
 make
 ```
