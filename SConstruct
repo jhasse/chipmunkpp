@@ -4,6 +4,7 @@ vars = Variables()
 vars.Add(BoolVariable('debug', 'Enable debug build', 0))
 vars.Add(BoolVariable('unit_test', 'Build unit tests', 0))
 vars.Add(BoolVariable('verbose', 'Show verbose compiling output', 0))
+vars.Add('chipmunk_dir', 'Path to the chipmunk source', 'chipmunk')
 
 env = Environment(variables = vars)
 Help(vars.GenerateHelpText(env))
@@ -35,10 +36,10 @@ if not env['verbose']:
 
 env.Append(CXXFLAGS="-std=c++0x",
            CFLAGS="-std=c99",
-           CPPPATH=Split("src chipmunk/include/chipmunk"))
+           CPPPATH=Split("src %s/include/chipmunk" % env['chipmunk_dir']))
 lib = env.Library(source=Glob("src/*.cpp") + Glob("src/chipmunkpp/*.cpp"),
                   target="chipmunk++")
-env.Append(LIBPATH=['chipmunk/src'], LIBS=[lib, 'chipmunk'])
+env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, 'chipmunk'])
 env.Program(source="test.cpp")
 
 if env['unit_test']:
