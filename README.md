@@ -23,3 +23,11 @@ make
 ```
 
 Run [scons](http://scons.org/) in Chipmunk++'s folder.
+
+Unit Tests
+----------
+
+```
+scons unit_test=1
+./unit_test/unit_test
+```
