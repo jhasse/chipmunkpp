@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import os
+
 vars = Variables()
 vars.Add(BoolVariable('debug', 'Enable debug build', 0))
 vars.Add(BoolVariable('unit_test', 'Build unit tests', 0))
@@ -7,6 +9,11 @@ vars.Add(BoolVariable('verbose', 'Show verbose compiling output', 0))
 vars.Add('chipmunk_dir', 'Path to the chipmunk source', 'chipmunk')
 
 env = Environment(variables = vars)
+env['ENV']['TERM'] = os.environ['TERM']
+if "CC" in os.environ:
+	env["CC"] = os.getenv("CC")
+if "CXX" in os.environ:
+	env["CXX"] = os.getenv("CXX")
 Help(vars.GenerateHelpText(env))
 try:
 	import multiprocessing
