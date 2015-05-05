@@ -25,7 +25,6 @@ namespace cp {
 		bool segmentQuery(Vect a, Vect b, SegmentQueryInfo* = nullptr);
 		void setFriction(Float);
 		void setElasticity(Float);
-		void setGroup(Group);
 		void setCollisionType(CollisionType);
 		CollisionType getCollisionType() const;
 		void setLayers(Layers);

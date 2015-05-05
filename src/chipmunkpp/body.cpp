@@ -22,28 +22,20 @@ namespace cp {
 		return body;
 	}
 
-	void Body::setPos(Vect p) {
-		cpBodySetPos(body, p);
+	void Body::setPosition(Vect p) {
+		cpBodySetPosition(body, p);
 	}
 
-	Vect Body::getPos() const {
-		return cpBodyGetPos(body);
+	Vect Body::getPosition() const {
+		return cpBodyGetPosition(body);
 	}
 
-	Vect Body::getVel() const {
-		return cpBodyGetVel(body);
+	Vect Body::getVelocity() const {
+		return cpBodyGetVelocity(body);
 	}
 
-	void Body::setVel(Vect velocity) {
-		cpBodySetVel(body, velocity);
-	}
-
-	Float Body::getVelLimit() const {
-		return cpBodyGetVelLimit(body);
-	}
-
-	void Body::setVelLimit(Float limit) {
-		cpBodySetVelLimit(body, limit);
+	void Body::setVelocity(Vect velocity) {
+		cpBodySetVelocity(body, velocity);
 	}
 
 	DataPointer Body::getUserData() const {

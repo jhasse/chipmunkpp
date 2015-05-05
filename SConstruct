@@ -25,14 +25,17 @@ if env['PLATFORM'] == 'win32':
 	env = Environment(tools=['mingw'], variables = vars)
 
 if env['PLATFORM'] == 'darwin':
-	env = Environment(CXX='clang++', CC='clang', CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++',
+	env = Environment(CXX='clang++', CC='clang',
+	                  CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++',
 	                  variables = vars, LIBPATH='../boost-libs/lib/mac')
 
 if env['PLATFORM'] == 'posix':
-	env.Append(CPPPATH='/usr/include/chipmunk')
+	env.Append(CPPPATH=['/usr/include/chipmunk',
+		                os.path.expanduser("~/.linuxbrew/include/chipmunk")],
+		       LIBPATH=[os.path.expanduser("~/.linuxbrew/lib")])
 
 if env['debug']:
-	env.Append(CCFLAGS = '-g -Wall')
+	env.Append(CCFLAGS = '-g -Wall -Wextra')
 else:
 	env.Append(CCFLAGS = '-O2 -DNDEBUG')
 
@@ -43,10 +46,10 @@ if not env['verbose']:
 
 env.Append(CXXFLAGS="-std=c++0x",
            CFLAGS="-std=c99",
-           CPPPATH=Split("src %s/include/chipmunk" % env['chipmunk_dir']))
+           CPPPATH=["src", env['chipmunk_dir'] + "/include/chipmunk"])
 lib = env.Library(source=Glob("src/*.cpp") + Glob("src/chipmunkpp/*.cpp"),
                   target="chipmunk++")
-env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, 'chipmunk'])
+env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, 'chipmunk', 'pthread'])
 env.Program(source="test.cpp")
 
 if env['unit_test']:

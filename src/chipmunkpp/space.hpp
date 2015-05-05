@@ -46,7 +46,7 @@ namespace cp {
 	private:
 		Space(const Space&);
 		const Space& operator=(const Space&);
-		static void segmentQueryFunc(cpShape*, cpFloat, cpVect, void*);
+		static void segmentQueryFunc(cpShape*, cpVect, cpVect, cpFloat, void*);
 		std::shared_ptr<Shape> findPtr(cpShape*) const;
 
 		cpSpace* space;

@@ -7,6 +7,6 @@ namespace cp {
 
 	Float areaForPoly(const std::vector<cp::Vect>& vects) {
 		return cpAreaForPoly(static_cast<int>(vects.size()),
-		                     reinterpret_cast<const cpVect*>(&vects[0]));
+		                     reinterpret_cast<const cpVect*>(&vects[0]), 0);
 	}
 }

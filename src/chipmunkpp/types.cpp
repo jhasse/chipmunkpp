@@ -10,7 +10,7 @@ namespace cp {
 		assert(0 <= layerNr && layerNr <= 31);
 	}
 
-	Layers::operator cpLayers() const {
+	Layers::operator cpBitmask() const {
 		return l;
 	}
 

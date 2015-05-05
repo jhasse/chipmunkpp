@@ -35,7 +35,7 @@ int main() {
 
 	auto ballBody = make_shared<Body>(mass, moment);
 	space.add(ballBody);
-	ballBody->setPos(Vect(0, 15));
+	ballBody->setPosition(Vect(0, 15));
 
 	// Now we create the collision shape for the ball.
 	// You can create multiple collision shapes that point to the same body.
@@ -49,8 +49,8 @@ int main() {
 	// It is *highly* recommended to use a fixed size time step.
 	Float timeStep = 1.0/60.0;
 	for (Float time = 0; time < 2; time += timeStep) {
-        Vect pos = ballBody->getPos();
-		Vect vel = ballBody->getVel();
+        Vect pos = ballBody->getPosition();
+		Vect vel = ballBody->getVelocity();
 		cout << setprecision(2) << fixed
 		     << "Time is "          << setw(5) << time << ". "
 		     << "ballBody is at "   << setw(5) << pos << ". "

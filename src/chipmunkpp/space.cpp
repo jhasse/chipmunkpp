@@ -8,7 +8,7 @@
 using namespace std;
 
 namespace cp {
-	Space::Space() : space(cpSpaceNew()), staticBody(make_shared<Body>(space->staticBody)) {
+	Space::Space() : space(cpSpaceNew()), staticBody(make_shared<Body>(cpSpaceGetStaticBody(space))) {
 	}
 
 	Space::~Space() {
@@ -67,30 +67,40 @@ namespace cp {
 		return *it;
 	}
 
-	void Space::segmentQueryFunc(cpShape* shape, cpFloat t, cpVect n, void* data) {
+	void Space::segmentQueryFunc(cpShape* shape, cpVect point, cpVect normal, cpFloat alpha, void* data) {
 		auto d = reinterpret_cast<SegmentQueryData*>(data);
-		d->func(d->self->findPtr(shape), t, n);
+		d->func(d->self->findPtr(shape), alpha, normal);
 	}
 
 	void Space::segmentQuery(Vect a, Vect b, Layers layers, Group group,
 	                         SegmentQueryFunc func) const {
 		SegmentQueryData data = { this, func };
-		cpSpaceSegmentQuery(space, a, b, static_cast<cpLayers>(layers), static_cast<cpGroup>(group), segmentQueryFunc, &data);
+		cpShapeFilter filter{static_cast<cpGroup>(group),
+		                     static_cast<cpBitmask>(layers),
+		                     static_cast<cpBitmask>(layers)};
+		cpSpaceSegmentQuery(space, a, b, 0, filter, segmentQueryFunc, &data);
 	}
 
 	shared_ptr<Shape> Space::segmentQueryFirst(Vect a, Vect b, Layers layers, Group group,
 	                                           SegmentQueryInfo* const info) const {
 		cpSegmentQueryInfo i;
-		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, static_cast<cpLayers>(layers), static_cast<cpGroup>(group), &i);
+		cpShapeFilter filter{static_cast<cpGroup>(group),
+		                     static_cast<cpBitmask>(layers),
+		                     static_cast<cpBitmask>(layers)};
+		auto rtn = cpSpaceSegmentQueryFirst(space, a, b, 0, filter, &i);
 		if (info) {
-			info->t = i.t;
-			info->n = i.n;
+			info->t = i.alpha;
+			info->n = i.normal;
 		}
 		return findPtr(rtn);
 	}
 
 	shared_ptr<Shape> Space::pointQueryFirst(Vect p, Layers layers, Group group) const {
-		return findPtr(cpSpacePointQueryFirst(space, p, static_cast<cpLayers>(layers), static_cast<cpGroup>(group)));
+		cpShapeFilter filter{static_cast<cpGroup>(group),
+		                     static_cast<cpBitmask>(layers),
+		                     static_cast<cpBitmask>(layers)};
+		cpPointQueryInfo i;
+		return findPtr(cpSpacePointQueryNearest(space, p, 100, filter, &i));
 	}
 
 	int Space::helperBegin(cpArbiter* arb, cpSpace* s, void* d) {
@@ -120,12 +130,12 @@ namespace cp {
 	                                std::function<void(Arbiter, Space&)> separate) {
 		auto data = new CallbackData(begin, preSolve, postSolve, separate, *this);
 		callbackDatas[std::make_pair(a, b)] = std::unique_ptr<CallbackData>(data);
-		cpSpaceAddCollisionHandler(space, a, b,
+		/*cpSpaceAddCollisionHandler(space, a, b,
 		                           begin == nullptr ? nullptr : helperBegin,
 		                           preSolve == nullptr ? nullptr : helperPreSolve,
 		                           postSolve == nullptr ? nullptr : helperPostSolve,
 		                           separate == nullptr ? nullptr : helperSeparate,
-		                           data);
+		                           data);*/
 	}
 
 }

@@ -16,9 +16,9 @@ namespace cp {
 		Layers(unsigned int layerNr); // one layer
 		Layers operator~() const;
 		Layers operator|(Layers rhs) const;
-		explicit operator cpLayers() const;
+		explicit operator cpBitmask() const;
 	private:
-		cpLayers l;
+		cpBitmask l;
 	};
 	const static Layers ALL_LAYERS(~(Layers()));
 

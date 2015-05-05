@@ -14,15 +14,15 @@ namespace cp {
 	}
 
 	bool Shape::pointQuery(Vect p) const {
-		return cpShapePointQuery(shape, p) == cpTrue;
+		return cpShapePointQuery(shape, p, nullptr) == cpTrue;
 	}
 
 	bool Shape::segmentQuery(Vect a, Vect b, SegmentQueryInfo* const info) {
 		cpSegmentQueryInfo i;
-		bool rtn = cpShapeSegmentQuery(shape, a, b, &i) == cpTrue;
+		bool rtn = cpShapeSegmentQuery(shape, a, b, 0, &i) == cpTrue;
 		if (info) {
-			info->t = i.t;
-			info->n = i.n;
+			info->t = i.alpha;
+			info->n = i.normal;
 		}
 		return rtn;
 	}
@@ -35,20 +35,12 @@ namespace cp {
 		cpShapeSetElasticity(shape, f);
 	}
 
-	void Shape::setGroup(Group g) {
-		cpShapeSetGroup(shape, static_cast<cpGroup>(g));
-	}
-
 	void Shape::setCollisionType(CollisionType t) {
 		cpShapeSetCollisionType(shape, t);
 	}
 
 	CollisionType Shape::getCollisionType() const {
 		return cpShapeGetCollisionType(shape);
-	}
-
-	void Shape::setLayers(Layers l) {
-		cpShapeSetLayers(shape, static_cast<cpLayers>(l));
 	}
 
 	void Shape::setUserData(DataPointer p) {

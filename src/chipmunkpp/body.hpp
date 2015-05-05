@@ -24,17 +24,12 @@ namespace cp {
 		explicit Body(cpBody*);
 		~Body();
 		operator cpBody*() const;
-		Vect getPos() const;
-		void setPos(Vect);
+		Vect getPosition() const;
+		void setPosition(Vect);
 
 		/// Linear velocity of the center of gravity of the body.
-		Vect getVel() const;
-		void setVel(Vect velocity);
-
-		/// Velocity limit of the body. Defaults to INFINITY unless you set it specifically. Can be used to limit
-		/// falling speeds, etc.
-		Float getVelLimit() const;
-		void setVelLimit(Float limit);
+		Vect getVelocity() const;
+		void setVelocity(Vect velocity);
 
 		DataPointer getUserData() const;
 		void setUserData(DataPointer);
