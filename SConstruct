@@ -27,15 +27,10 @@ if env['PLATFORM'] == 'win32':
 if env['PLATFORM'] == 'darwin':
 	env = Environment(CXX='clang++', CC='clang',
 	                  CXXFLAGS='-stdlib=libc++ ', LINKFLAGS='-stdlib=libc++',
-	                  variables = vars, LIBPATH='../boost-libs/lib/mac')
-
-if env['PLATFORM'] == 'posix':
-	env.Append(CPPPATH=['/usr/include/chipmunk',
-		                os.path.expanduser("~/.linuxbrew/include/chipmunk")],
-		       LIBPATH=[os.path.expanduser("~/.linuxbrew/lib")])
+	                  variables = vars)
 
 if env['debug']:
-	env.Append(CCFLAGS = '-g -Wall -Wextra')
+	env.Append(CCFLAGS = '-g -Wall -Wextra -pedantic')
 else:
 	env.Append(CCFLAGS = '-O2 -DNDEBUG')
 
@@ -49,7 +44,11 @@ env.Append(CXXFLAGS="-std=c++0x",
            CPPPATH=["src", env['chipmunk_dir'] + "/include/chipmunk"])
 lib = env.Library(source=Glob("src/*.cpp") + Glob("src/chipmunkpp/*.cpp"),
                   target="chipmunk++")
-env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, 'chipmunk', 'pthread'])
+chipmunk = env.Command(os.path.join(env["chipmunk_dir"], "src/libchipmunk.a"), None,
+	"cd " + env["chipmunk_dir"] + "; "
+	"cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .; "
+	"make")
+env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, chipmunk, 'pthread'])
 env.Program(source="test.cpp")
 
 if env['unit_test']:
