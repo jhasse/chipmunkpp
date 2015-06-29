@@ -47,7 +47,7 @@ lib = env.Library(source=Glob("src/*.cpp") + Glob("src/chipmunkpp/*.cpp"),
 chipmunk = env.Command(os.path.join(env["chipmunk_dir"], "src/libchipmunk.a"), None,
 	"cd " + env["chipmunk_dir"] + "; "
 	"cmake -D BUILD_DEMOS=OFF -D BUILD_SHARED=OFF -D CMAKE_BUILD_TYPE=Release .; "
-	"make")
+	"make -j{}".format(env.GetOption("num_jobs")))
 env.Append(LIBPATH=['%s/src' % env['chipmunk_dir']], LIBS=[lib, chipmunk, 'pthread'])
 env.Program(source="test.cpp")
 
