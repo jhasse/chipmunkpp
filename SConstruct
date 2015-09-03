@@ -9,7 +9,7 @@ vars.Add(BoolVariable('verbose', 'Show verbose compiling output', 0))
 vars.Add('chipmunk_dir', 'Path to the chipmunk source', 'chipmunk')
 
 env = Environment(variables = vars)
-env['ENV']['TERM'] = os.environ['TERM']
+env['ENV']['TERM'] = os.getenv('TERM')
 if "CC" in os.environ:
 	env["CC"] = os.getenv("CC")
 if "CXX" in os.environ:
