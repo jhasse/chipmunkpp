@@ -14,3 +14,4 @@ visualcpp/Debug/
 visualcpp/Release/
 *.sublime-workspace
 .gitattributes
+/build*/
