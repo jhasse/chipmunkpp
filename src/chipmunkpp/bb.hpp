@@ -2,9 +2,6 @@
 
 #include "vect.hpp"
 
-#ifndef _MSC_VER
-#pragma GCC visibility push(default)
-#endif
 namespace cp {
 	/// Axis-aligned 2D bounding box type
 	class BB {
@@ -25,6 +22,3 @@ namespace cp {
 		bool contains(Vect v) const;
 	};
 }
-#ifndef _MSC_VER
-#pragma GCC visibility pop
-#endif
