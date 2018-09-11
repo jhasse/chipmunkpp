@@ -4,9 +4,6 @@
 
 #include <chipmunk.h>
 
-#ifndef _MSC_VER
-#pragma GCC visibility push(default)
-#endif
 namespace cp {
 	/**
 	 * \brief Rigid body
@@ -40,6 +37,3 @@ namespace cp {
 		bool owning;
 	};
 }
-#ifndef _MSC_VER
-#pragma GCC visibility pop
-#endif

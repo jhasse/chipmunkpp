@@ -2,9 +2,6 @@
 
 #include "types.hpp"
 
-#ifndef _MSC_VER
-#pragma GCC visibility push(default)
-#endif
 namespace cp {
 	/// Segment query info struct
 	struct SegmentQueryInfo {
@@ -21,6 +18,3 @@ namespace cp {
 		}
 	};
 }
-#ifndef _MSC_VER
-#pragma GCC visibility pop
-#endif
