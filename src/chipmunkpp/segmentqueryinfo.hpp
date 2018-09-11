@@ -1,6 +1,7 @@
 #pragma once
 
 #include "types.hpp"
+#include "vect.hpp"
 
 namespace cp {
 	/// Segment query info struct
