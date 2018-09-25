@@ -2,12 +2,10 @@ project('chipmunkpp', ['cpp'], default_options : ['cpp_std=c++14'])
 
 cxx = meson.get_compiler('cpp')
 
-chipmunk_inc = include_directories('chipmunk/include/chipmunk')
+chipmunk_dep = subproject('chipmunk').get_variable('chipmunk_dep')
 include = include_directories('src')
-lib = static_library('chipmunkpp', include_directories : [
-	chipmunk_inc,
-], dependencies : [
-	cxx.find_library('chipmunk'),
+lib = static_library('chipmunkpp', dependencies : [
+	chipmunk_dep
 ], sources : [
 	'src/chipmunk.cpp',
 	'src/chipmunkpp/arbiter.cpp',
@@ -22,4 +20,5 @@ lib = static_library('chipmunkpp', include_directories : [
 	'src/chipmunkpp/vect.cpp',
 ])
 
-chipmunkpp_dep = declare_dependency(include_directories : [include, chipmunk_inc], link_with : lib)
+chipmunkpp_dep = declare_dependency(include_directories : include, link_with : lib,
+                                    dependencies : chipmunk_dep)
