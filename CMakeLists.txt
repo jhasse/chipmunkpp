@@ -4,6 +4,7 @@ project(chipmunkpp LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 14)
 
 set(BUILD_DEMOS OFF CACHE BOOL "Chipmunk Demos" FORCE)
+set(BUILD_SHARED OFF CACHE BOOL "Build and install the shared library" FORCE)
 add_subdirectory(chipmunk)
 
 file(GLOB SOURCES src/*.cpp src/chipmunkpp/*.cpp)
