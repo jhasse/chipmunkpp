@@ -7,7 +7,7 @@ namespace cp {
 	}
 
 	Layers::Layers(unsigned int layerNr) : l(1 << layerNr) {
-		assert(0 <= layerNr && layerNr <= 31);
+		assert(layerNr <= 31);
 	}
 
 	Layers::operator cpLayers() const {
