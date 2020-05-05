@@ -5,6 +5,6 @@ source_url = https://github.com/slembcke/Chipmunk2D/archive/Chipmunk-6.2.2.tar.g
 source_filename = Chipmunk2D-Chipmunk-6.2.2.tar.gz
 source_hash = c51f0e3a30770f6b940de3228bee40a871aaf7611a1b5ec546a7d2b9e1041f97
 
-patch_url = https://wrapdb.mesonbuild.com/v1/projects/chipmunk/6.2.2/1/get_zip
-patch_filename = chipmunk-6.2.2-1-wrap.zip
-patch_hash = 86bf80c6fb5ba61b6064c1cc56afcafa640945ac476c2a84d18377e3df8b3a18
+patch_url = https://wrapdb.mesonbuild.com/v1/projects/chipmunk/6.2.2/2/get_zip
+patch_filename = chipmunk-6.2.2-2-wrap.zip
+patch_hash = 4cdadcfa61549ad8d10a9d210ae352b54d450577dcc61b387de9b2fe984c8e4f
