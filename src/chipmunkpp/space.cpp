@@ -93,22 +93,22 @@ namespace cp {
 		return findPtr(cpSpacePointQueryFirst(space, p, static_cast<cpLayers>(layers), static_cast<cpGroup>(group)));
 	}
 
-	int Space::helperBegin(cpArbiter* arb, cpSpace* s, void* d) {
+	int Space::helperBegin(cpArbiter* arb, cpSpace*, void* d) {
 		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
 		return data.begin(arb, data.self);
 	}
 
-	int Space::helperPreSolve(cpArbiter* arb, cpSpace* s, void* d) {
+	int Space::helperPreSolve(cpArbiter* arb, cpSpace*, void* d) {
 		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
 		return data.preSolve(arb, data.self);
 	}
 
-	void Space::helperPostSolve(cpArbiter* arb, cpSpace* s, void* d) {
+	void Space::helperPostSolve(cpArbiter* arb, cpSpace*, void* d) {
 		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
 		return data.postSolve(arb, data.self);
 	}
 
-	void Space::helperSeparate(cpArbiter* arb, cpSpace* s, void* d) {
+	void Space::helperSeparate(cpArbiter* arb, cpSpace*, void* d) {
 		CallbackData& data = *reinterpret_cast<CallbackData*>(d);
 		return data.separate(arb, data.self);
 	}
