@@ -2,7 +2,7 @@
 
 namespace cp {
 	Float momentForCircle(Float m, Float r1, Float r2, Vect offset) {
-		return cpMomentForCircle(m, r2, r2, offset);
+		return cpMomentForCircle(m, r1, r2, offset);
 	}
 
 	Float areaForPoly(const std::vector<cp::Vect>& vects) {
