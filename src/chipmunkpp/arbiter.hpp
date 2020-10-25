@@ -7,7 +7,7 @@
 namespace cp {
 class Arbiter {
 public:
-	Arbiter(cpArbiter*);
+	Arbiter(cpArbiter*); // NOLINT
 	Body getBodyA();
 	Body getBodyB();
 

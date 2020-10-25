@@ -23,7 +23,7 @@ const static Layers ALL_LAYERS(~(Layers()));
 
 class Group {
 public:
-	Group(cpGroup);
+	Group(cpGroup); // NOLINT
 	explicit operator cpGroup() const;
 
 private:

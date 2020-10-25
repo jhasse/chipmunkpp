@@ -15,11 +15,11 @@ public:
 	/// Creates the zero vector.
 	Vect();
 
-	/// Copy constructor
-	Vect(const cpVect&);
+	/// Conversion from Chipmunk's cpVect
+	Vect(const cpVect&); // NOLINT
 
 	/// Conversion operator to Chipmunk's cpVect.
-	operator cpVect() const;
+	operator cpVect() const; // NOLINT
 
 	Vect& operator/=(Float v);
 	Vect& operator*=(Float v);

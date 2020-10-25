@@ -15,10 +15,10 @@ namespace cp {
 class Body {
 public:
 	Body(Float mass, Float inertia);
-	Body(Body&&);
+	Body(Body&&) noexcept;
 	explicit Body(cpBody*);
 	~Body();
-	operator cpBody*() const;
+	operator cpBody*() const; // NOLINT
 	Vect getPos() const;
 	void setPos(Vect);
 

@@ -18,7 +18,7 @@ class Shape {
 
 public:
 	virtual ~Shape();
-	operator cpShape*() const;
+	operator cpShape*() const; // NOLINT
 	bool pointQuery(Vect) const;
 	bool segmentQuery(Vect a, Vect b, SegmentQueryInfo* = nullptr);
 	void setFriction(Float);

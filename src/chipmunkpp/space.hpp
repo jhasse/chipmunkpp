@@ -68,7 +68,8 @@ private:
 		             std::function<int(Arbiter, Space&)> preSolve,
 		             std::function<void(Arbiter, Space&)> postSolve,
 		             std::function<void(Arbiter, Space&)> separate, Space& self)
-		: begin(begin), preSolve(preSolve), postSolve(postSolve), separate(separate), self(self) {
+		: begin(std::move(begin)), preSolve(std::move(preSolve)), postSolve(std::move(postSolve)),
+		  separate(std::move(separate)), self(self) {
 		}
 	};
 

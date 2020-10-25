@@ -4,7 +4,7 @@ namespace cp {
 	Body::Body(cpFloat mass, cpFloat inertia) : body(cpBodyNew(mass, inertia)), owning(true) {
 	}
 
-	Body::Body(Body&& other) : body(other.body), owning(other.owning) {
+	Body::Body(Body&& other) noexcept : body(other.body), owning(other.owning) {
 		other.body = nullptr;
 		other.owning = false;
 	}
