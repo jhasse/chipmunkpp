@@ -12,6 +12,6 @@
 #include "chipmunkpp/arbiter.hpp"
 
 namespace cp {
-	Float momentForCircle(Float m, Float r1, Float r2, Vect offset = Vect(0, 0));
-	Float areaForPoly(const std::vector<cp::Vect>&);
-}
+Float momentForCircle(Float m, Float r1, Float r2, Vect offset = Vect(0, 0));
+Float areaForPoly(const std::vector<cp::Vect>&);
+} // namespace cp
