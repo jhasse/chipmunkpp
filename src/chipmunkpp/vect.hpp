@@ -117,6 +117,6 @@ Vect operator+(const Vect& lhs, const Vect& rhs);
 bool operator<(const Vect& lhs, const Vect& rhs);
 bool operator>(const Vect& lhs, const Vect& rhs);
 
-} // namespace cp
-
 std::ostream& operator<<(std::ostream&, const cp::Vect&);
+
+} // namespace cp

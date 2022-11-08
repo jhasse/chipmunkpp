@@ -195,11 +195,10 @@ namespace cp {
 	bool Vect::near(Vect v1, Vect v2, Float dist) {
 		return (v1-v2).lengthSq() < dist * dist;
 	}
-}
 
-std::ostream& operator<<(std::ostream& out, const cp::Vect& vec)
-{
-	int w = static_cast<int>(out.width(0));
-	out << "(" << std::setw(w) << vec.x << ", " << std::setw(w) << vec.y << ")";
-	return out;
+	std::ostream& operator<<(std::ostream& out, const cp::Vect& vec) {
+		int width = static_cast<int>(out.width(0));
+		out << "(" << std::setw(width) << vec.x << ", " << std::setw(width) << vec.y << ")";
+		return out;
+	}
 }
