@@ -2,7 +2,9 @@
 
 #include "types.hpp"
 
+#include <format>
 #include <iosfwd>
+#include <sstream>
 
 namespace cp {
 
@@ -120,3 +122,11 @@ bool operator>(const Vect& lhs, const Vect& rhs);
 std::ostream& operator<<(std::ostream&, const cp::Vect&);
 
 } // namespace cp
+
+template <> struct std::formatter<cp::Vect> : std::formatter<std::string> {
+	auto format(const cp::Vect& value, std::format_context& ctx) const {
+		std::ostringstream stream;
+		stream << value;
+		return std::formatter<std::string>::format(stream.str(), ctx);
+	}
+};
