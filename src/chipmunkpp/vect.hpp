@@ -123,10 +123,11 @@ std::ostream& operator<<(std::ostream&, const cp::Vect&);
 
 } // namespace cp
 
-template <> struct std::formatter<cp::Vect> : std::formatter<std::string> {
-	auto format(const cp::Vect& value, std::format_context& ctx) const {
+template <> struct std::formatter<cp::Vect> {
+	constexpr auto parse(std::format_parse_context& ctx) { return ctx.begin(); }
+	template <class FormatContext> auto format(const cp::Vect& value, FormatContext& ctx) const {
 		std::ostringstream stream;
 		stream << value;
-		return std::formatter<std::string>::format(stream.str(), ctx);
+		return std::format_to(ctx.out(), "{}", stream.str());
 	}
 };
